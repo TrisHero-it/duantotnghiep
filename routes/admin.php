@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DangTinController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('admin.naptiens.index');
 });
+
+Route::get('/dangtins', [DangTinController::class,'index'])->name('dangtins.index');
+Route::get('/dangtins/create', [DangTinController::class,'create'])->name('dangtins.create');
+Route::post('/dangtins', [DangTinController::class,'store'])->name('dangtins.store');
