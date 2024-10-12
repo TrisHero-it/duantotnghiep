@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('admin.naptiens.index');
+Route::prefix('admin')->name('admin.')->group(function () {
+
+    Route::controller(CommentController::class)->group(function () {
+
+        Route::get('comment', 'index')->name('comment.index');
+        Route::post('comment/updateStatus',  'updateStatus')->name('comment.updateStatus');
+
+    });
 });
+

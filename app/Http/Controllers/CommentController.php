@@ -16,7 +16,14 @@ class CommentController extends Controller
         if (request()->ajax()) {
             return datatables()->of(BinhLuan::with('user')->get())
                 ->addColumn('trang_thai', function ($row) {
-                    return $row->trang_thai == 1 ? '<span class="btn btn-success btn-sm">Đã duyệt</span>' : '<span class="btn btn-danger btn-sm">Chưa duyệt></span>';
+                    return '
+                    <div class="radio-container">
+                        <label class="toggle">
+                            <input type="checkbox" class="status-change update-status" data-id="' . $row->id . '" ' . ($row->trang_thai ? 'checked' : '') . '>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                ';
                 })
                 ->addColumn('email', function ($row) {
                     return $row->user->email;
@@ -24,12 +31,41 @@ class CommentController extends Controller
                 ->addColumn('created_at', function ($row) {
                     return \Carbon\Carbon::parse($row->created_at)->locale('vi')->diffForHumans();
                 })
-                ->rawColumns(['trang_thai'])
+                ->addColumn('action', function ($row) {
+                    return '
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-info btn-sm" >
+                               Xem chi tiết
+                            </button>
+                        </div>
+                    ';
+                })
+                ->rawColumns(['trang_thai', 'action'])
                 ->addIndexColumn()
                 ->make(true);
         }
 
         return view('admin.comments.index');
+    }
+    function updateStatus(Request $request)
+    {
+
+        $comment = BinhLuan::find($request->id);
+
+        if (!$comment) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Đã có lỗi xảy ra. Vui lòng thử lại sau ít phút!'
+            ]);
+        }
+
+        $comment->trang_thai = !$comment->trang_thai;
+        $comment->save();
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Cập nhật thành công'
+        ]);
     }
 
     /**
