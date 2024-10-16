@@ -39,4 +39,11 @@ class DangTinController extends Controller
 
         return redirect()->route('dangtins.index');
     }
+
+    public function destroy(Request $request, $id)
+    {
+        $dangtins = DangTin::findOrFail($id);
+        $dangtins->delete();
+        return redirect()->route('dangtins.index');
+    }
 }
