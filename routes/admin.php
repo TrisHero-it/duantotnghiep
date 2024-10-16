@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< HEAD
+use App\Http\Controllers\DangTinController;
+=======
 use App\Http\Controllers\PlayerController;
+>>>>>>> f41026325a3df9394a9388cb804c4bac71732d5b
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +18,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+<<<<<<< HEAD
+Route::get('/', function () {
+    return view('admin.naptiens.index');
+});
+
+Route::get('/dangtins', [DangTinController::class,'index'])->name('dangtins.index');
+Route::get('/dangtins/create', [DangTinController::class,'create'])->name('dangtins.create');
+Route::post('/dangtins', [DangTinController::class,'store'])->name('dangtins.store');
+=======
 
 
 Route::resource('players', PlayerController::class);
+>>>>>>> f41026325a3df9394a9388cb804c4bac71732d5b

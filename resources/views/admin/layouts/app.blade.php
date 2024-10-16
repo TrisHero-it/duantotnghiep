@@ -33,6 +33,8 @@
     <!-- notification css -->
     <link rel="stylesheet" href="{{asset('assets/plugins/notification/css/notification.min.css')}}">
 
+    @yield('header')
+    
     <!-- vendor css -->
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
 </head>
