@@ -35,7 +35,6 @@
 
     <!-- vendor css -->
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
-
 </head>
 
 <body class="">
@@ -80,44 +79,10 @@
                     <li data-username="vertical horizontal box layout RTL fixed static collapse menu color icon dark background image"
                         class="nav-item pcoded-hasmenu">
                         <a href="#!" class="nav-link"><span class="pcoded-micon"><i
-                                    class="feather icon-layout"></i></span><span class="pcoded-mtext">Page
-                                layouts</span></a>
+                                    class="feather icon-layout"></i></span><span class="pcoded-mtext">Quản lí player</span></a>
                         <ul class="pcoded-submenu">
-                            <li class="pcoded-hasmenu"><a href="#!" class="">Vertical</a>
-                                <ul class="pcoded-submenu">
-                                    <li class=""><a href="layout-static.html" class="" target="_blank">Static</a></li>
-                                    <li class=""><a href="layout-fixed.html" class="" target="_blank">Fixed</a></li>
-                                    <li class=""><a href="layout-menu-fixed.html" class="" target="_blank">Navbar
-                                            fixed</a></li>
-                                    <li class=""><a href="layout-mini-menu.html" class="" target="_blank">Collapse
-                                            menu</a></li>
-                                    <li class=""><a href="layout-navbg.html" class="" target="_blank">Navbar imagebg</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class=""><a href="layout-horizontal.html" class="" target="_blank">Horizontal</a></li>
-                            <li class=""><a href="layout-horizontal-1.html" class="" target="_blank">Horizontal v1</a>
-                            </li>
-                            <li class=""><a href="layout-horizontal-2.html" class="" target="_blank">Horizontal v2</a>
-                            </li>
-                            <li class=""><a href="layout-horizontal-rtl.html" class="" target="_blank">Horizontal
-                                    RTL</a></li>
-                            <li class=""><a href="layout-box.html" class="" target="_blank">Box layout</a></li>
-                            <li class=""><a href="layout-rtl.html" class="" target="_blank">RTL</a></li>
-                            <li class=""><a href="layout-light.html" class="" target="_blank">Light layout</a></li>
-                            <li class=""><a href="layout-dark.html" class="" target="_blank">Dark layout <span
+                            <li class=""><a href="{{route('players.index')}}" class="" target="_blank">Danh sách player<span
                                         class="pcoded-badge label label-danger">Hot</span></a></li>
-                            <li class=""><a href="layout-menu-icon.html" class="" target="_blank">Color icon</a></li>
-                        </ul>
-                    </li>
-                    <li data-username="widget statistic data chart" class="nav-item pcoded-hasmenu">
-                        <a href="#!" class="nav-link"><span class="pcoded-micon"><i
-                                    class="feather icon-layers"></i></span><span class="pcoded-mtext">Widget</span><span
-                                class="pcoded-badge label label-success">100+</span></a>
-                        <ul class="pcoded-submenu">
-                            <li class=""><a href="widget-statistic.html" class="">Statistic</a></li>
-                            <li class=""><a href="widget-data.html" class="">Data</a></li>
-                            <li class=""><a href="widget-chart.html" class="">Chart</a></li>
                         </ul>
                     </li>
                     <li class="nav-item pcoded-menu-caption">
