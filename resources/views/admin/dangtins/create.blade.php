@@ -18,14 +18,12 @@
                     @csrf
                     <div class="row">
                         <div class="col-md-12">
-                            <form>
-                                <div class="mb-3">
-                                    <label class="form-label"
-                                        for="exampleFormControlTextarea1">Nội dung</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1"
-                                        rows="3" name="noi_dung"></textarea>
-                                </div>
-                            </form>
+                            <div class="mb-3">
+                                <label class="form-label"
+                                    for="exampleFormControlTextarea1">Nội dung</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1"
+                                    rows="3" name="noi_dung"></textarea>
+                            </div>
                         </div>
                         <div class="col-sm-12">
                             <div class="card">

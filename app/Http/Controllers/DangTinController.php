@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreDangTinRequest;
 use App\Models\DangTin;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class DangTinController extends Controller
@@ -26,6 +27,8 @@ class DangTinController extends Controller
     public function store(StoreDangTinRequest $request)
     {
         $validate = $request->validated();
+
+        $data['tai_khoan_id'] = Auth::id();
 
         $data = $request->except('video');
 
