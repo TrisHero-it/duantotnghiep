@@ -1,6 +1,11 @@
 <?php
+<<<<<<< HEAD
 
 use App\Http\Controllers\CommentController;
+=======
+use App\Http\Controllers\DangTinController;
+use App\Http\Controllers\PlayerController;
+>>>>>>> 652cbcc88f876950b157fc5c00a45886bb671b38
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+<<<<<<< HEAD
 Route::prefix('admin')->name('admin.')->group(function () {
 
     Route::controller(CommentController::class)->group(function () {
@@ -24,3 +30,15 @@ Route::prefix('admin')->name('admin.')->group(function () {
     });
 });
 
+=======
+Route::get('/', function () {
+    return view('admin.naptiens.index');
+});
+
+Route::get('/dangtins', [DangTinController::class,'index'])->name('dangtins.index');
+Route::get('/dangtins/create', [DangTinController::class,'create'])->name('dangtins.create');
+Route::post('/dangtins', [DangTinController::class,'store'])->name('dangtins.store');
+
+
+Route::resource('players', PlayerController::class);
+>>>>>>> 652cbcc88f876950b157fc5c00a45886bb671b38

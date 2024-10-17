@@ -53,7 +53,11 @@
                             <div class="mb-3">
                                 <label class="form-label" for="exampleFormControlTextarea1">Example textarea</label>
                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+<<<<<<< HEAD
                             </div>
+=======
+                            </div>12312312
+>>>>>>> 652cbcc88f876950b157fc5c00a45886bb671b38
                         </form>
                     </div>
                 </div>
