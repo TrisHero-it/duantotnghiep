@@ -1,8 +1,8 @@
-
+@extends('admin.layouts.app')
 
 @section('content')
 <div class="container">
-    <h1>Thêm tài khoản</h1>
+    <h1>Sửa tài khoản</h1>
     <form action="{{ route('update' , $taikhoans->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('put')
