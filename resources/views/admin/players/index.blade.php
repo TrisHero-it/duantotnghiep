@@ -30,10 +30,10 @@
                                     <td>{{ $player -> id }}</td>
                                     <td>{{ $player -> taiKhoan -> ten }}</td>
                                     <td>{{ $player -> taiKhoan -> gioi_tinh }}</td>
-                                    <td><img src="{{ $player -> taiKhoan -> anh_dai_dien }}" alt=""></td>
+                                    <td><img src="{{ Storage::url($player -> taiKhoan -> anh_dai_dien) }}" alt="Ảnh đại diện" width="100"></td>
                                     <td>{{ $player -> trang_thai_player }}</td>
                                     <td>{{ $player -> taiKhoan -> phanQuyen -> ten }}</td>
-                                    <td><a href="{{ route('players.show', $player -> id) }}"><i class="fas fa-eye"></i></a></td>
+                                    <td><a href="{{ route('players.show', $player -> id) }}"><i class="fas fa-eye" style="font-size: 18px"></i></a></td>
                                 </tr>
                             @endforeach
                         </tbody>

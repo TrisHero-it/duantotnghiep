@@ -14,8 +14,8 @@
                     <div class="col-md-6">
                     <form method="GET" enctype="multipart/form-data">
                         <div class="mb-3">
-                            <label class="form-label" for="">Ảnh đại diện</label>
-                            <input type="text" class="form-control" value="{{ $player -> taiKhoan -> anh_dai_dien }}">
+                            <label class="form-label" for="">Ảnh đại diện</label><br>
+                            <img src="{{ Storage::url($player -> taiKhoan -> anh_dai_dien) }}" alt="Ảnh đại diện" width="100">
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="">Ảnh</label>
@@ -88,10 +88,6 @@
                                 <input type="text" class="form-control" value="{{ $player -> taiKhoan -> cccd }}">
                             </div>
                             <div class="mb-3">
-                                <label class="form-label" for="">Mật khẩu</label>
-                                <input type="password" class="form-control" value="{{ $player -> taiKhoan -> mat_khau }}">
-                            </div>
-                            <div class="mb-3">
                                 <label class="form-label" for="">Số dư</label>
                                 <input type="number" class="form-control" value="{{ $player -> taiKhoan -> so_du }}">
                             </div>
@@ -102,7 +98,7 @@
                             </div> --}}
                             <div class="mb-3">
                                 <label class="form-label" for="">Phân quyền</label>
-                                <input type="text" class="form-control" value="{{ $player -> taiKhoan -> phan_quyen_id }}">
+                                <input type="text" class="form-control" value="{{ $player -> taiKhoan -> phanQuyen -> ten }}">
                             </div>
                         </form>
                     </div>

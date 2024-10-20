@@ -8,14 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class TaiKhoan extends Model
 {
     use HasFactory;
-<<<<<<< HEAD
-    protected $table = 'tai_khoans';
-    protected $fillable= [
-        'ten','ngay_sinh','biet_danh','gioi_tinh','email','sdt','cccd','mat_khau','so_du','anh_dai_dien','bi_cam','phan_quyen_id',
-    ];
-
-}
-=======
 
     public $fillable = [
         "ten",
@@ -42,4 +34,3 @@ class TaiKhoan extends Model
         return $this->belongsTo(PhanQuyen::class, 'phan_quyen_id');
     }
 }
->>>>>>> f3abf0612ac3ea96e459bea71b44a98eab6442cd

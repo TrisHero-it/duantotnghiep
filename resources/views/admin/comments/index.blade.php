@@ -109,7 +109,7 @@
         $('#myTable').DataTable({
             processing: true,
             serverSide: true,
-            ajax: '{{ route('admin.comment.index') }}',
+            ajax: '{{ route('admin.comments.index') }}',
             columns: [{
                     data: 'id',
                     name: 'id'
@@ -180,7 +180,7 @@
                 if (result.isConfirmed) {
                     // Gửi yêu cầu cập nhật trạng thái
                     $.ajax({
-                        url: '{{ route('admin.comment.updateStatus') }}', // Đường dẫn đến route cập nhật trạng thái
+                        url: '{{ route('admin.comments.updateStatus') }}', // Đường dẫn đến route cập nhật trạng thái
                         type: 'POST',
                         data: {
                             id: id,
