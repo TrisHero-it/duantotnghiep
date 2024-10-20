@@ -168,7 +168,7 @@
 
             Swal.fire({
                 title: 'Xác nhận',
-                text: newStatus == 1 ? "Bạn có chắc chắn muốn ẩn bình luận?" :
+                text: newStatus == 1 ? "Bạn có chắc chắn muốn ẩn bình luận?" :
                     "Bạn có chắc chắn muốn ẩn bình luận?",
                 icon: 'warning',
                 showCancelButton: true,
