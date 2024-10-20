@@ -19,7 +19,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="">Ảnh</label>
-                            <input type="text" class="form-control" value="{{ $player -> taiKhoan -> anh_dai_dien }}">
+                            <img src="{{ Storage::url($player -> anh) }}" alt="Ảnh" width="100">
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="">Giá tiền</label>
@@ -37,17 +37,19 @@
                             <label class="form-label" for="">Thông tin</label>
                             <input type="" class="form-control" value="{{ $player -> thong_tin }}">
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="">Số người theo dõi</label>
-                            <input type="number" class="form-control" value="{{ $player -> so_nguoi_theo_doi }}">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="">Số giờ được thuê</label>
+                        <div class="row">
+                            <div class="mb-3 col-md-4">
+                                <label class="form-label" for="">Số người theo dõi</label>
+                                <input type="number" class="form-control" value="{{ $player -> so_nguoi_theo_doi }}">
+                            </div>
+                            <div class="mb-3 col-md-4">
+                                <label class="form-label" for="">Số giờ được thuê</label>
                             <input type="number" class="form-control" value="{{ $player -> so_gio_duoc_thue }}">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="">Số lần được thuê</label>
-                            <input type="number" class="form-control" value="{{ $player -> so_lan_duoc_thue }}">
+                            </div>
+                            <div class="mb-3 col-md-4">
+                                <label class="form-label" for="">Số lần được thuê</label>
+                                <input type="number" class="form-control" value="{{ $player -> so_lan_duoc_thue }}">
+                            </div>
                         </div>
                         
                         {{-- <div class="mb-3 form-check">
@@ -63,29 +65,33 @@
                                 <label class="form-label" for="">Tên</label>
                                 <input type="text" class="form-control" value="{{ $player -> taiKhoan -> ten }}">
                             </div>
-                            <div class="mb-3">
-                                <label class="form-label" for="">Ngày sinh</label>
-                                <input type="datetime" class="form-control" value="{{ $player -> taiKhoan -> ngay_sinh }}">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label" for="">Biệt danh</label>
-                                <input type="text" class="form-control" value="{{ $player -> taiKhoan -> biet_danh }}">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label" for="">Giới tính</label>
-                                <input type="text" class="form-control" value="{{ $player -> taiKhoan -> gioi_tinh }}">
+                            <div class="row">
+                                <div class="mb-3 col-md-6">
+                                    <label class="form-label" for="">Ngày sinh</label>
+                                    <input type="datetime" class="form-control" value="{{ $player -> taiKhoan -> ngay_sinh }}">
+                                </div>
+                                <div class="mb-3 col-md-4">
+                                    <label class="form-label" for="">Biệt danh</label>
+                                    <input type="text" class="form-control" value="{{ $player -> taiKhoan -> biet_danh }}">
+                                </div>
+                                <div class="mb-3 col-md-2">
+                                    <label class="form-label" for="">Giới tính</label>
+                                    <input type="text" class="form-control" value="{{ $player -> taiKhoan -> gioi_tinh }}">
+                                </div>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="">Email</label>
                                 <input type="email" class="form-control" value="{{ $player -> taiKhoan -> email }}">
                             </div>
-                            <div class="mb-3">
-                                <label class="form-label" for="">Số điện thoại</label>
-                                <input type="text" class="form-control" value="{{ $player -> taiKhoan -> sdt }}">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label" for="">Căn cước công dân</label>
-                                <input type="text" class="form-control" value="{{ $player -> taiKhoan -> cccd }}">
+                            <div class="row">
+                                <div class="mb-3 col-md-6">
+                                    <label class="form-label" for="">Số điện thoại</label>
+                                    <input type="text" class="form-control" value="{{ $player -> taiKhoan -> sdt }}">
+                                </div>
+                                <div class="mb-3 col-md-6">
+                                    <label class="form-label" for="">Căn cước công dân</label>
+                                    <input type="text" class="form-control" value="{{ $player -> taiKhoan -> cccd }}">
+                                </div>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="">Số dư</label>
