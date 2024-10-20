@@ -6,13 +6,13 @@
 
 <head>
 
-    <title>Dasho - Bootstrap 5 Admin Template</title>
+    <title>@yield('title', env('APP_NAME'))</title>
     <!-- HTML5 Shim and Respond.js IE11 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 11]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-		<![endif]-->
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
     <!-- Meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -36,6 +36,8 @@
 
     <!-- vendor css -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     @stack('styles')
 
@@ -84,6 +86,10 @@
                             class="nav-link"><span class="pcoded-micon"><i
                                     class="feather icon-aperture"></i></span><span
                                 class="pcoded-mtext">Comments</span></a></li>
+                    <li data-username="comments" class="nav-item"><a href="{{ route('admin.catalogues.index') }}"
+                            class="nav-link"><span class="pcoded-micon">
+                                <i class="feather icon-menu"></i></span><span class="pcoded-mtext">Catalogues</span></a>
+                    </li>
                     <li data-username="vertical horizontal box layout RTL fixed static collapse menu color icon dark background image"
                         class="nav-item pcoded-hasmenu">
                         <a href="#!" class="nav-link"><span class="pcoded-micon"><i
@@ -1203,7 +1209,24 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         })
+
+        $(document).ready(function() {
+            window.previewImage = function(event, imgId) {
+                const file = event.target.files[0];
+                const reader = new FileReader();
+                reader.onload = function() {
+                    const imgElement = document.getElementById(imgId);
+                    imgElement.src = reader.result; // Cập nhật nguồn cho ảnh
+                }
+                if (file) {
+                    reader.readAsDataURL(file);
+                }
+            }
+        })
     </script>
+
+    @include('admin.include.alert')
+
     @stack('scripts')
     <div class="footer-fab">
         <div class="b-bg">
