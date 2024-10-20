@@ -12,7 +12,9 @@ return new class extends Migration {
     {
         Schema::create('danh_mucs', function (Blueprint $table) {
             $table->id();
-            $table->string('ten_danh_muc');
+            $table->string('name');
+            $table->string('image')->nullable();
+            $table->boolean('published')->default(true);
             $table->timestamps();
         });
     }
