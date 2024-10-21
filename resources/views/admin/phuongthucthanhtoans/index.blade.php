@@ -22,30 +22,22 @@
                         <thead>
                             <tr>
                                 <th>STT</th>
-                                <th>Tài khoản</th>
-                                <th>Video</th>
-                                <th>Lượt thích</th>
-                                <th>Nội dung</th>
-                                <th>Ngày đăng</th>
+                                <th>Tên phương thức</th>
+                                <th>Số tài khoản</th>
+                                <th>Trạng thái</th>
                                 <th>Thao tác</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($dangtins as $dangtin)
+                            @foreach ($phuongthucthanhtoans as $phuongthucthanhtoan)
                             <tr>
                                 <td>{{$loop->iteration}}</td>
-                                <td>{{$dangtin->taiKhoan->ten}}</td>
-                                <td>
-                                    <video width="200px" controls>
-                                        <source src="{{ Storage::url($dangtin->video) }}" type="video/mp4">
-                                    </video>
-                                </td>
-                                <td>{{$dangtin->luot_thich}}</td>
-                                <td>{{$dangtin->noi_dung}}</td>
-                                <td>{{$dangtin->created_at}}</td>
+                                <td>{{$phuongthucthanhtoan->ten_phuong_thuc}}</td>
+                                <td>{{$phuongthucthanhtoan->so_tai_khoan}}</td>
+                                <td>Null</td>
                                 <td>
                                     <a href="#!"><i class="icon feather icon-edit f-16 text-c-green"></i></a>
-                                    <form action="{{route('dangtins.destroy', $dangtin->id)}}" method="POST" onsubmit="return confirm('Bạn có muốn xoá không?')">
+                                    <form action="{{route('phuongthucthanhtoans.destroy', $phuongthucthanhtoan->id)}}" method="POST" onsubmit="return confirm('Bạn có muốn xoá không?')">
                                         @csrf
                                         @method("DELETE")
                                         <a href=""><i class="feather icon-trash-2 f-16 ms-3 text-c-red"></i></a>
