@@ -8,6 +8,7 @@ use App\Http\Requests\Catalogues\{
     CatalogueStoreRequest,
     CatalogueUpdateRequest
 };
+use App\Models\Danhmuc;
 
 class CatalogueController extends Controller
 {
@@ -18,7 +19,7 @@ class CatalogueController extends Controller
     {
         $title = "Danh sách danh mục";
 
-        $catalogues = Catalogue::query()->latest()->paginate(10);
+        $catalogues = Danhmuc::query()->latest()->paginate(10);
         return view('admin.catalogues.index', compact('title', 'catalogues'));
     }
 
@@ -45,7 +46,7 @@ class CatalogueController extends Controller
             $crentials['published'] = 0;
         }
 
-        Catalogue::create($crentials);
+        Danhmuc::create($crentials);
 
         session()->flash('success', 'Thêm danh mục thành công');
         return redirect()->route('admin.catalogues.index');
@@ -54,7 +55,7 @@ class CatalogueController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Catalogue $catalogue)
+    public function show(Danhmuc $catalogue)
     {
         dd($catalogue);
     }
@@ -62,7 +63,7 @@ class CatalogueController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Catalogue $catalogue)
+    public function edit(Danhmuc $catalogue)
     {
         $title = "Cập nhật danh mục";
         return view('admin.catalogues.edit', compact('catalogue', 'title'));
@@ -71,7 +72,7 @@ class CatalogueController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(CatalogueUpdateRequest $request, Catalogue $catalogue)
+    public function update(CatalogueUpdateRequest $request, Danhmuc $catalogue)
     {
         $crentials = $request->validated();
         if ($request->hasFile('image')) {
@@ -91,7 +92,7 @@ class CatalogueController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Catalogue $catalogue)
+    public function destroy(Danhmuc $catalogue)
     {
         if ($catalogue->image) {
             deleteImage($catalogue->image);
