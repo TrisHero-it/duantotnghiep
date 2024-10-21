@@ -115,14 +115,8 @@
         <div class="m-header">
             <a class="mobile-menu" id="mobile-collapse1" href="#!"><span></span></a>
             <a href="index.html" class="b-brand">
-
-<<<<<<< HEAD
                 <img src="{{ asset('assets/images/logo.svg') }}" alt="" class="logo images">
                 <img src="{{ asset('assets/images/logo-icon.svg') }}" alt="" class="logo-thumb images">
-=======
-                <img src="{{asset('assets/images/logo.svg')}}" alt="" class="logo images">
-                <img src="{{asset('assets/images/logo-icon.svg')}}" alt="" class="logo-thumb images">
->>>>>>> 652cbcc88f876950b157fc5c00a45886bb671b38
             </a>
         </div>
         <a class="mobile-menu" id="mobile-header" href="#!">
@@ -164,11 +158,7 @@
                                 </li>
                                 <li class="notification">
                                     <div class="d-flex">
-<<<<<<< HEAD
                                         <img class="img-radius" src="{{ asset('assets/images/user/avatar-1.jpg') }}"
-=======
-                                        <img class="img-radius" src="{{asset('assets/images/user/avatar-1.jpg')}}"
->>>>>>> 652cbcc88f876950b157fc5c00a45886bb671b38
                                             alt="Profile Image">
                                         <div class="flex-grow-1">
                                             <p><strong>John Doe</strong><span class="n-time text-muted"><i
@@ -250,12 +240,8 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-end profile-notification">
                             <div class="pro-head">
-<<<<<<< HEAD
                                 <img src="assets/images/user/avatar-1.jpg" class="img-radius"
                                     alt="User-Profile-Image">
-=======
-                                <img src="assets/images/user/avatar-1.jpg" class="img-radius" alt="User-Profile-Image">
->>>>>>> 652cbcc88f876950b157fc5c00a45886bb671b38
                                 <span>
                                     <span class="text-muted">Free Trial</span>
                                     <span class="h6">doe@company.com</span>
@@ -264,7 +250,6 @@
                             <ul class="pro-body">
                                 <li><a href="#!" class="dropdown-item"><i class="feather icon-settings"></i>
                                         Settings</a></li>
-<<<<<<< HEAD
                                 <li><a href="#!" class="dropdown-item"><i class="feather icon-user"></i>
                                         Profile</a>
                                 </li>
@@ -275,15 +260,6 @@
                                         Lock Screen</a></li>
                                 <li><a href="#!" class="dropdown-item"><i
                                             class="feather icon-power text-danger"></i>
-=======
-                                <li><a href="#!" class="dropdown-item"><i class="feather icon-user"></i> Profile</a>
-                                </li>
-                                <li><a href="message.html" class="dropdown-item"><i class="feather icon-mail"></i>
-                                        My Messages</a></li>
-                                <li><a href="auth-signin.html" class="dropdown-item"><i class="feather icon-lock"></i>
-                                        Lock Screen</a></li>
-                                <li><a href="#!" class="dropdown-item"><i class="feather icon-power text-danger"></i>
->>>>>>> 652cbcc88f876950b157fc5c00a45886bb671b38
                                         Logout</a></li>
                             </ul>
                         </div>
@@ -301,7 +277,6 @@
         <a href="#!" class="h-close-text"><i class="feather icon-x"></i></a>
         <ul class="nav nav-tabs" id="chatTab" role="tablist">
             <li class="nav-item">
-<<<<<<< HEAD
                 <a class="nav-link active text-uppercase" id="chat-tab" data-bs-toggle="tab" href="#chat"
                     role="tab" aria-controls="chat" aria-selected="true"><i
                         class="feather icon-message-circle me-2"></i>Chat</a>
@@ -315,30 +290,14 @@
                 <a class="nav-link text-uppercase" id="setting-tab" data-bs-toggle="tab" href="#setting"
                     role="tab" aria-controls="setting" aria-selected="false"><i
                         class="feather icon-settings me-2"></i>Setting</a>
-=======
-                <a class="nav-link active text-uppercase" id="chat-tab" data-bs-toggle="tab" href="#chat" role="tab"
-                    aria-controls="chat" aria-selected="true"><i class="feather icon-message-circle me-2"></i>Chat</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-uppercase" id="user-tab" data-bs-toggle="tab" href="#user" role="tab"
-                    aria-controls="user" aria-selected="false"><i class="feather icon-users me-2"></i>User</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-uppercase" id="setting-tab" data-bs-toggle="tab" href="#setting" role="tab"
-                    aria-controls="setting" aria-selected="false"><i class="feather icon-settings me-2"></i>Setting</a>
->>>>>>> 652cbcc88f876950b157fc5c00a45886bb671b38
             </li>
         </ul>
         <div class="tab-content" id="chatTabContent">
             <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
                 <div class="h-list-header">
                     <div class="input-group">
-<<<<<<< HEAD
                         <input type="text" id="search-friends" class="form-control"
                             placeholder="Search Friend . . .">
-=======
-                        <input type="text" id="search-friends" class="form-control" placeholder="Search Friend . . .">
->>>>>>> 652cbcc88f876950b157fc5c00a45886bb671b38
                     </div>
                 </div>
                 <div class="h-list-body">
@@ -351,7 +310,6 @@
                                     <div class="live-status">3</div>
                                 </a>
                                 <div class="flex-grow-1">
-<<<<<<< HEAD
                                     <h6 class="chat-header">Josephin Doe<small class="d-block text-c-green">Typing .
                                             .
                                         </small></h6>
@@ -359,19 +317,11 @@
                             </div>
                             <div class="media userlist-box" data-id="2" data-status="online"
                                 data-username="Lary Doe">
-=======
-                                    <h6 class="chat-header">Josephin Doe<small class="d-block text-c-green">Typing . .
-                                        </small></h6>
-                                </div>
-                            </div>
-                            <div class="media userlist-box" data-id="2" data-status="online" data-username="Lary Doe">
->>>>>>> 652cbcc88f876950b157fc5c00a45886bb671b38
                                 <a class="media-left" href="#!"><img class="media-object img-radius"
                                         src="assets/images/user/avatar-2.jpg" alt="Profile Image">
                                     <div class="live-status">1</div>
                                 </a>
                                 <div class="media-body">
-<<<<<<< HEAD
                                     <h6 class="chat-header">Lary Doe<small
                                             class="d-block text-c-green">online</small>
                                     </h6>
@@ -388,20 +338,6 @@
                             </div>
                             <div class="media userlist-box" data-id="4" data-status="offline"
                                 data-username="Alia">
-=======
-                                    <h6 class="chat-header">Lary Doe<small class="d-block text-c-green">online</small>
-                                    </h6>
-                                </div>
-                            </div>
-                            <div class="media userlist-box" data-id="3" data-status="online" data-username="Alice">
-                                <a class="media-left" href="#!"><img class="media-object img-radius"
-                                        src="assets/images/user/avatar-3.jpg" alt="Profile Image"></a>
-                                <div class="media-body">
-                                    <h6 class="chat-header">Alice<small class="d-block text-c-green">online</small></h6>
-                                </div>
-                            </div>
-                            <div class="media userlist-box" data-id="4" data-status="offline" data-username="Alia">
->>>>>>> 652cbcc88f876950b157fc5c00a45886bb671b38
                                 <a class="media-left" href="#!"><img class="media-object img-radius"
                                         src="assets/images/user/avatar-1.jpg" alt="Profile Image">
                                     <div class="live-status">1</div>
@@ -411,7 +347,6 @@
                                     </h6>
                                 </div>
                             </div>
-<<<<<<< HEAD
                             <div class="media userlist-box" data-id="5" data-status="offline"
                                 data-username="Suzen">
                                 <a class="media-left" href="#!"><img class="media-object img-radius"
@@ -419,13 +354,6 @@
                                 <div class="media-body">
                                     <h6 class="chat-header">Suzen<small class="d-block text-muted">15 min
                                             ago</small>
-=======
-                            <div class="media userlist-box" data-id="5" data-status="offline" data-username="Suzen">
-                                <a class="media-left" href="#!"><img class="media-object img-radius"
-                                        src="assets/images/user/avatar-4.jpg" alt="Profile Image"></a>
-                                <div class="media-body">
-                                    <h6 class="chat-header">Suzen<small class="d-block text-muted">15 min ago</small>
->>>>>>> 652cbcc88f876950b157fc5c00a45886bb671b38
                                     </h6>
                                 </div>
                             </div>
@@ -436,7 +364,6 @@
                                     <div class="live-status">3</div>
                                 </a>
                                 <div class="media-body">
-<<<<<<< HEAD
                                     <h6 class="chat-header">Josephin Doe<small class="d-block text-c-green">Typing .
                                             .
                                         </small></h6>
@@ -444,19 +371,11 @@
                             </div>
                             <div class="media userlist-box" data-id="2" data-status="online"
                                 data-username="Lary Doe">
-=======
-                                    <h6 class="chat-header">Josephin Doe<small class="d-block text-c-green">Typing . .
-                                        </small></h6>
-                                </div>
-                            </div>
-                            <div class="media userlist-box" data-id="2" data-status="online" data-username="Lary Doe">
->>>>>>> 652cbcc88f876950b157fc5c00a45886bb671b38
                                 <a class="media-left" href="#!"><img class="media-object img-radius"
                                         src="assets/images/user/avatar-2.jpg" alt="Profile Image">
                                     <div class="live-status">1</div>
                                 </a>
                                 <div class="media-body">
-<<<<<<< HEAD
                                     <h6 class="chat-header">Lary Doe<small
                                             class="d-block text-c-green">online</small>
                                     </h6>
@@ -473,20 +392,6 @@
                             </div>
                             <div class="media userlist-box" data-id="4" data-status="offline"
                                 data-username="Alia">
-=======
-                                    <h6 class="chat-header">Lary Doe<small class="d-block text-c-green">online</small>
-                                    </h6>
-                                </div>
-                            </div>
-                            <div class="media userlist-box" data-id="3" data-status="online" data-username="Alice">
-                                <a class="media-left" href="#!"><img class="media-object img-radius"
-                                        src="assets/images/user/avatar-3.jpg" alt="Profile Image"></a>
-                                <div class="media-body">
-                                    <h6 class="chat-header">Alice<small class="d-block text-c-green">online</small></h6>
-                                </div>
-                            </div>
-                            <div class="media userlist-box" data-id="4" data-status="offline" data-username="Alia">
->>>>>>> 652cbcc88f876950b157fc5c00a45886bb671b38
                                 <a class="media-left" href="#!"><img class="media-object img-radius"
                                         src="assets/images/user/avatar-1.jpg" alt="Profile Image">
                                     <div class="live-status">1</div>
@@ -496,7 +401,6 @@
                                     </h6>
                                 </div>
                             </div>
-<<<<<<< HEAD
                             <div class="media userlist-box" data-id="5" data-status="offline"
                                 data-username="Suzen">
                                 <a class="media-left" href="#!"><img class="media-object img-radius"
@@ -504,13 +408,6 @@
                                 <div class="media-body">
                                     <h6 class="chat-header">Suzen<small class="d-block text-muted">15 min
                                             ago</small>
-=======
-                            <div class="media userlist-box" data-id="5" data-status="offline" data-username="Suzen">
-                                <a class="media-left" href="#!"><img class="media-object img-radius"
-                                        src="assets/images/user/avatar-4.jpg" alt="Profile Image"></a>
-                                <div class="media-body">
-                                    <h6 class="chat-header">Suzen<small class="d-block text-muted">15 min ago</small>
->>>>>>> 652cbcc88f876950b157fc5c00a45886bb671b38
                                     </h6>
                                 </div>
                             </div>
@@ -521,7 +418,6 @@
                                     <div class="live-status">3</div>
                                 </a>
                                 <div class="media-body">
-<<<<<<< HEAD
                                     <h6 class="chat-header">Josephin Doe<small class="d-block text-c-green">Typing .
                                             .
                                         </small></h6>
@@ -529,19 +425,11 @@
                             </div>
                             <div class="media userlist-box" data-id="2" data-status="online"
                                 data-username="Lary Doe">
-=======
-                                    <h6 class="chat-header">Josephin Doe<small class="d-block text-c-green">Typing . .
-                                        </small></h6>
-                                </div>
-                            </div>
-                            <div class="media userlist-box" data-id="2" data-status="online" data-username="Lary Doe">
->>>>>>> 652cbcc88f876950b157fc5c00a45886bb671b38
                                 <a class="media-left" href="#!"><img class="media-object img-radius"
                                         src="assets/images/user/avatar-2.jpg" alt="Profile Image">
                                     <div class="live-status">1</div>
                                 </a>
                                 <div class="media-body">
-<<<<<<< HEAD
                                     <h6 class="chat-header">Lary Doe<small
                                             class="d-block text-c-green">online</small>
                                     </h6>
@@ -554,17 +442,6 @@
                                 <div class="media-body">
                                     <h6 class="chat-header">Alice<small class="d-block text-c-green">online</small>
                                     </h6>
-=======
-                                    <h6 class="chat-header">Lary Doe<small class="d-block text-c-green">online</small>
-                                    </h6>
-                                </div>
-                            </div>
-                            <div class="media userlist-box" data-id="3" data-status="online" data-username="Alice">
-                                <a class="media-left" href="#!"><img class="media-object img-radius"
-                                        src="assets/images/user/avatar-3.jpg" alt="Profile Image"></a>
-                                <div class="media-body">
-                                    <h6 class="chat-header">Alice<small class="d-block text-c-green">online</small></h6>
->>>>>>> 652cbcc88f876950b157fc5c00a45886bb671b38
                                 </div>
                             </div>
                         </div>
@@ -600,7 +477,6 @@
                             <div class="media userlist-box" data-id="1" data-status="online"
                                 data-username="Josephin Doe">
                                 <a class="media-left" href="#!"><img class="media-object img-radius"
-<<<<<<< HEAD
                                         src="{{ asset('assets/images/user/avatar-1.jpg') }}"
                                         alt="Profile Image "></a>
                                 <div class="media-body">
@@ -614,22 +490,10 @@
                                 <a class="media-left" href="#!"><img class="media-object img-radius"
                                         src="{{ asset('assets/images/user/avatar-2.jpg') }}"
                                         alt="Profile Image"></a>
-=======
-                                        src="{{asset('assets/images/user/avatar-1.jpg')}}" alt="Profile Image "></a>
-                                <div class="media-body">
-                                    <p class="chat-header">Josephin Doe<small class="d-block">i am not what happened .
-                                            .</small></p>
-                                </div>
-                            </div>
-                            <div class="media userlist-box" data-id="2" data-status="online" data-username="Lary Doe">
-                                <a class="media-left" href="#!"><img class="media-object img-radius"
-                                        src="{{asset('assets/images/user/avatar-2.jpg')}}" alt="Profile Image"></a>
->>>>>>> 652cbcc88f876950b157fc5c00a45886bb671b38
                                 <div class="media-body">
                                     <h6 class="chat-header">Lary Doe<small class="d-block">Avalable</small></h6>
                                 </div>
                             </div>
-<<<<<<< HEAD
                             <div class="media userlist-box" data-id="3" data-status="online"
                                 data-username="Alice">
                                 <a class="media-left" href="#!"><img class="media-object img-radius"
@@ -642,23 +506,12 @@
                             </div>
                             <div class="media userlist-box" data-id="4" data-status="offline"
                                 data-username="Alia">
-=======
-                            <div class="media userlist-box" data-id="3" data-status="online" data-username="Alice">
-                                <a class="media-left" href="#!"><img class="media-object img-radius"
-                                        src="{{asset('assets/images/user/avatar-3.jpg')}}" alt="Profile Image"></a>
-                                <div class="media-body">
-                                    <h6 class="chat-header">Alice<small class="d-block">hear using Dasho</small></h6>
-                                </div>
-                            </div>
-                            <div class="media userlist-box" data-id="4" data-status="offline" data-username="Alia">
->>>>>>> 652cbcc88f876950b157fc5c00a45886bb671b38
                                 <a class="media-left" href="#!">
                                     <div
                                         class="hei-50 wid-50 img-radius bg-success d-flex text-white f-22 align-items-center justify-content-center">
                                         A</div>
                                 </a>
                                 <div class="media-body">
-<<<<<<< HEAD
                                     <h6 class="chat-header">Alia<small class="d-block text-muted">Avalable</small>
                                     </h6>
                                 </div>
@@ -671,16 +524,6 @@
                                 <div class="media-body">
                                     <h6 class="chat-header">Suzen<small class="d-block text-muted">Avalable</small>
                                     </h6>
-=======
-                                    <h6 class="chat-header">Alia<small class="d-block text-muted">Avalable</small></h6>
-                                </div>
-                            </div>
-                            <div class="media userlist-box" data-id="5" data-status="offline" data-username="Suzen">
-                                <a class="media-left" href="#!"><img class="media-object img-radius"
-                                        src="{{asset('assets/images/user/avatar-4.jpg')}}" alt="Profile Image"></a>
-                                <div class="media-body">
-                                    <h6 class="chat-header">Suzen<small class="d-block text-muted">Avalable</small></h6>
->>>>>>> 652cbcc88f876950b157fc5c00a45886bb671b38
                                 </div>
                             </div>
                             <div class="media userlist-box" data-id="1" data-status="online"
@@ -691,7 +534,6 @@
                                         JD</div>
                                 </a>
                                 <div class="media-body">
-<<<<<<< HEAD
                                     <h6 class="chat-header">Josephin Doe<small class="d-block text-muted">Don't send
                                             me
                                             image</small></h6>
@@ -702,15 +544,6 @@
                                 <a class="media-left" href="#!"><img class="media-object img-radius"
                                         src="{{ asset('assets/images/user/avatar-2.jpg') }}"
                                         alt="Profile Image"></a>
-=======
-                                    <h6 class="chat-header">Josephin Doe<small class="d-block text-muted">Don't send me
-                                            image</small></h6>
-                                </div>
-                            </div>
-                            <div class="media userlist-box" data-id="2" data-status="online" data-username="Lary Doe">
-                                <a class="media-left" href="#!"><img class="media-object img-radius"
-                                        src="{{asset('assets/images/user/avatar-2.jpg')}}" alt="Profile Image"></a>
->>>>>>> 652cbcc88f876950b157fc5c00a45886bb671b38
                                 <div class="media-body">
                                     <h6 class="chat-header">Lary Doe<small class="d-block text-muted">not send free
                                             msg</small></h6>
@@ -783,13 +616,8 @@
                 <div class="main-friend-chat">
                     <div class="d-flex chat-messages">
                         <a class="media-left photo-table" href="#!"><img
-<<<<<<< HEAD
                                 class="media-object img-radius img-radius m-t-5"
                                 src="{{ asset('assets/images/user/avatar-2.jpg') }}" alt="Profile Image"></a>
-=======
-                                class="media-object img-radius img-radius m-t-5" src="{{asset('assets/images/user/avatar-2.jpg')}}"
-                                alt="Profile Image"></a>
->>>>>>> 652cbcc88f876950b157fc5c00a45886bb671b38
                         <div class="flex-grow-1 chat-menu-content">
                             <div class="">
                                 <p class="chat-cont">hello tell me something</p>
@@ -806,7 +634,6 @@
                             <p class="chat-time">8:22 a.m.</p>
                         </div>
                         <a class="media-right photo-table" href="#!"><img
-<<<<<<< HEAD
                                 class="media-object img-radius img-radius m-t-5"
                                 src="{{ asset('assets/images/user/avatar-1.jpg') }}" alt="Profile Image"></a>
                     </div>
@@ -814,15 +641,6 @@
                         <a class="media-left photo-table" href="#!"><img
                                 class="media-object img-radius img-radius m-t-5"
                                 src="{{ asset('assets/images/user/avatar-2.jpg') }}" alt="Profile Image"></a>
-=======
-                                class="media-object img-radius img-radius m-t-5" src="{{asset('assets/images/user/avatar-1.jpg')}}"
-                                alt="Profile Image"></a>
-                    </div>
-                    <div class="d-flex chat-messages">
-                        <a class="media-left photo-table" href="#!"><img
-                                class="media-object img-radius img-radius m-t-5" src="{{asset('assets/images/user/avatar-2.jpg')}}"
-                                alt="Profile Image"></a>
->>>>>>> 652cbcc88f876950b157fc5c00a45886bb671b38
                         <div class="flex-grow-1 chat-menu-content">
                             <div class="">
                                 <p class="chat-cont">can you help me?</p>
@@ -839,12 +657,8 @@
                 <a href="#!" class="input-group-prepend btn btn-success btn-attach">
                     <i class="feather icon-paperclip"></i>
                 </a>
-<<<<<<< HEAD
                 <input type="text" name="h-chat-text" class="form-control h-send-chat"
                     placeholder="Write hear . . ">
-=======
-                <input type="text" name="h-chat-text" class="form-control h-send-chat" placeholder="Write hear . . ">
->>>>>>> 652cbcc88f876950b157fc5c00a45886bb671b38
                 <button type="submit" class="input-group-append btn-send btn btn-primary">
                     <i class="feather icon-message-circle"></i>
                 </button>
@@ -864,7 +678,6 @@
     <!-- [ Main Content ] end -->
 
     <!-- Required Js -->
-<<<<<<< HEAD
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="{{ asset('assets/js/vendor-all.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/bootstrap/js/popper.min.js') }}"></script>
@@ -882,30 +695,15 @@
         })
     </script>
     @stack('scripts')
-=======
-    <script src="{{asset('assets/js/vendor-all.min.js')}}"></script>
-    <script src="{{asset('assets/plugins/bootstrap/js/popper.min.js')}}"></script>
-    <script src="{{asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{asset('assets/js/pcoded.min.js')}}"></script>
-    <script src="{{asset('assets/js/menu-setting.js')}}"></script>
-
-    <!-- dashboard-custom js -->
-    <script src="{{asset('assets/js/pages/dashboard-analytics.js')}}"></script>
-    @yield('script')
->>>>>>> 652cbcc88f876950b157fc5c00a45886bb671b38
+    @yield('scripts')
     <div class="footer-fab">
         <div class="b-bg">
             <i class="fas fa-question"></i>
         </div>
         <div class="fab-hover">
             <ul class="list-unstyled">
-<<<<<<< HEAD
                 <li><a href="https://html.phoenixcoded.net/dasho/bootstrap/doc/index-bc-package.html"
                         target="_blank" data-text="UI Kit" class="btn btn-icon btn-rounded btn-info m-0"><i
-=======
-                <li><a href="https://html.phoenixcoded.net/dasho/bootstrap/doc/index-bc-package.html" target="_blank"
-                        data-text="UI Kit" class="btn btn-icon btn-rounded btn-info m-0"><i
->>>>>>> 652cbcc88f876950b157fc5c00a45886bb671b38
                             class="feather icon-layers"></i></a></li>
                 <li><a href="https://html.phoenixcoded.net/dasho/bootstrap/doc/index.html" target="_blank"
                         data-text="Document" class="btn btn-icon btn-rounded btn-primary m-0"><i
@@ -920,8 +718,4 @@
 
 <!-- Mirrored from html.phoenixcoded.net/dasho/bootstrap/default/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 09 Aug 2024 02:55:09 GMT -->
 
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> 652cbcc88f876950b157fc5c00a45886bb671b38
