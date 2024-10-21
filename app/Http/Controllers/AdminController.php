@@ -12,7 +12,7 @@ class AdminController extends Controller
     public function index()
     {
         $complaints = ToCao::with(['user', 'player'])->get();
-        return view('admin.tocaos.index', compact('complaints'));
+        // return view('admin.tocaos.index', compact('complaints'));
     }
 
     public function create()
