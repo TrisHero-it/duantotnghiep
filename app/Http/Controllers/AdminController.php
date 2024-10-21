@@ -52,18 +52,18 @@ class AdminController extends Controller
         ]);
 
         $user = TaiKhoan::find($complaint->id_player);
-        if ($user) {
-            switch ($request->trang_thai) {
-                case 'Thành công':
-                    $user->update(['bi_cam' => 2]);
-                    break;
-                case 'Chờ xử lí':
-                case 'Đang xử lí':
-                case 'Thất bại':
-                    $user->update(['bi_cam' => 1]);
-                    break;
-            }
-        }
+        // if ($user) {
+        //     switch ($request->trang_thai) {
+        //         case 'Thành công':
+        //             $user->update(['bi_cam' => 2]);
+        //             break;
+        //         case 'Chờ xử lí':
+        //         case 'Đang xử lí':
+        //         case 'Thất bại':
+        //             $user->update(['bi_cam' => 1]);
+        //             break;
+        //     }
+        // }
 
         return redirect()->back()->with('success', 'Complaint status updated successfully.');
     }
