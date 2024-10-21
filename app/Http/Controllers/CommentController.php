@@ -12,7 +12,7 @@ class CommentController extends Controller
      */
     public function index()
     {
-
+        $title = "Danh sách binh luan";
         if (request()->ajax()) {
             return datatables()->of(BinhLuan::with('user')->get())
                 ->addColumn('trang_thai', function ($row) {
