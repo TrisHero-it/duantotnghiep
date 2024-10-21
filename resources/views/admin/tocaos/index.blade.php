@@ -34,7 +34,7 @@
                                     <td>{{ $complaint->noi_dung_to_cao }}</td>
                                     <td>{{ ucfirst($complaint->trang_thai) }}</td>
                                     <td>
-                                        <form action="{{ route('admin.tocao.updateStatus', $complaint->id) }}" method="POST">
+                                        <form action="{{ route('tocao.updateStatus', $complaint->id) }}" method="POST">
                                             @csrf
                                             @method('PATCH')
 
