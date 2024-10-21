@@ -12,7 +12,7 @@ class AdminController extends Controller
     public function index()
     {
         $complaints = ToCao::with(['user', 'player'])->get();
-        // return view('admin.tocaos.index', compact('complaints'));
+        return view('admin.tocaos.index', compact('complaints'));
     }
 
     public function create()
@@ -43,9 +43,9 @@ class AdminController extends Controller
 
     public function updateStatus(ToCao $complaint, Request $request)
     {
-        $request->validate([
-            'trang_thai' => 'required|in:Chờ xử lí,Đang xử lí,Thành công,Thất bại',
-        ]);
+        // $request->validate([
+        //     'trang_thai' => 'required|in:Chờ xử lí,Đang xử lí,Thành công,Thất bại',
+        // ]);
 
         $complaint->update([
             'trang_thai' => $request->trang_thai,
