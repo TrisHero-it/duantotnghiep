@@ -6,7 +6,7 @@ use App\Models\ToCao;
 use App\Models\TaiKhoan;
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class ToCaoController extends Controller
 {
     //
     public function index()
@@ -65,6 +65,6 @@ class AdminController extends Controller
             }
         }
 
-        // return redirect()->back()->with('success', 'Complaint status updated successfully.');
+        return redirect()->back()->with('success', 'Complaint status updated successfully.');
     }
 }
