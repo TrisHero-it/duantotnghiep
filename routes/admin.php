@@ -6,6 +6,7 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\DangTinController;
 use App\Http\Controllers\TaiKhoanController;
 use App\Http\Controllers\CatalogueController;
+use App\Http\Controllers\ToCaoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,12 @@ Route::delete('/taikhoans/{id}', [TaiKhoanController::class, 'destroy'])->name('
 Route::get('/dangtins', [DangTinController::class, 'index'])->name('dangtins.index');
 Route::get('/dangtins/create', [DangTinController::class, 'create'])->name('dangtins.create');
 Route::post('/dangtins', [DangTinController::class, 'store'])->name('dangtins.store');
+
+Route::get('/tocaos', [ToCaoController::class, 'index'])->name('admin.tocao.index');
+
+Route::patch('/tocaos/{complaint}', [ToCaoController::class, 'updateStatus'])->name('admin.tocao.updateStatus');
+Route::get('/tocaos/add', [ToCaoController::class, 'create'])->name('admin.tocao.add');
+Route::post('/tocaos/add', [ToCaoController::class, 'store'])->name('tocao.store');
 
 
 Route::resource('players', PlayerController::class);
