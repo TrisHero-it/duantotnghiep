@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ToCaoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,8 +18,8 @@ use Illuminate\Support\Facades\Route;
 //     return view('admin.naptiens.index');
 // });
 
-Route::get('/', [AdminController::class, 'index'])->name('admin.tocao.index');
+Route::get('/', [ToCaoController::class, 'index'])->name('admin.tocao.index');
 
-Route::patch('/tocaos/{complaint}', [AdminController::class, 'updateStatus'])->name('admin.tocao.updateStatus');
-Route::get('/add', [AdminController::class, 'create'])->name('admin.tocao.add');
-Route::post('/add', [AdminController::class, 'store'])->name('tocao.store');
+Route::patch('/tocaos/{complaint}', [ToCaoController::class, 'updateStatus'])->name('admin.tocao.updateStatus');
+Route::get('/add', [ToCaoController::class, 'create'])->name('admin.tocao.add');
+Route::post('/add', [ToCaoController::class, 'store'])->name('tocao.store');
