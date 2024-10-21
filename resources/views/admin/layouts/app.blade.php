@@ -67,7 +67,7 @@
                 </a>
                 <a class="mobile-menu" id="mobile-collapse" href="#!"><span></span></a>
             </div>
-            <div class="navbar-content scroll-div   " id="layout-sidenav">
+            <div class="navbar-content scroll-div" id="layout-sidenav">
                 <ul class="nav pcoded-inner-navbar sidenav-inner">
                     <li class="nav-item pcoded-menu-caption">
                         <label>Navigation</label>
@@ -89,20 +89,14 @@
                                     class="feather icon-aperture"></i></span><span
                                 class="pcoded-mtext">Comments</span></a></li>
 
-                    <li data-username="comments" class="nav-item"><a href="{{ route('players.index') }}"
-                            class="nav-link"><span class="pcoded-micon"><i
-                                    class="fas fa-user-secret"></i></span><span
-                                class="pcoded-mtext">Quản lí players</span></a></li>
-
-                    {{-- <li data-username="vertical horizontal box layout RTL fixed static collapse menu color icon dark background image"
+                    <li data-username="vertical horizontal box layout RTL fixed static collapse menu color icon dark background image"
                         class="nav-item pcoded-hasmenu">
                         <a href="{{route('players.index')}}" class="nav-link"><span class="pcoded-micon"><i
-                                    class="feather icon-layout"></i></span><span class="pcoded-mtext">Quản lí player</span></a>
+                                    class="fas fa-user-secret"></i></span><span class="pcoded-mtext">Quản lí player</span></a>
                         <ul class="pcoded-submenu">
-                            <li class=""><a href="{{route('players.index')}}" class="">Danh sách player<span
-                                        class="pcoded-badge label label-danger">Hot</span></a></li>
+                            <li class=""><a href="{{route('players.index')}}" class="">Danh sách player</a></li>
                         </ul>
-                    </li> --}}
+                    </li>
                 </ul>
 
 

@@ -25,4 +25,9 @@ class Player extends Model
     {
         return $this->belongsTo(TaiKhoan::class, 'tai_khoan_id');
     }
+
+    public function lichSuThue()
+    {
+        return $this->hasMany(LichSuThuePlayer::class, 'player_id');
+    }
 }

@@ -44,11 +44,11 @@
                             </div>
                             <div class="mb-3 col-md-4">
                                 <label class="form-label" for="">Số giờ được thuê</label>
-                            <input type="number" class="form-control" value="{{ $player -> so_gio_duoc_thue }}">
+                            <input type="number" class="form-control" value="{{ $tongGioThue }}">
                             </div>
                             <div class="mb-3 col-md-4">
-                                <label class="form-label" for="">Số lần được thuê</label>
-                                <input type="number" class="form-control" value="{{ $player -> so_lan_duoc_thue }}">
+                                <label class="form-label" for="">Số lượng đơn thuê</label>
+                                <input type="number" class="form-control" value="{{ $soDonThue }}">
                             </div>
                         </div>
                         
@@ -97,7 +97,6 @@
                                 <label class="form-label" for="">Số dư</label>
                                 <input type="number" class="form-control" value="{{ $player -> taiKhoan -> so_du }}">
                             </div>
-                            
                             {{-- <div class="mb-3">
                                 <label class="form-label" for="">Trạng thái</label>
                                 <input type="text" class="form-control" value="{{ $player -> taiKhoan -> bi_cam }}">
