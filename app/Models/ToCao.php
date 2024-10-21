@@ -19,7 +19,7 @@ class ToCao extends Model
 
     public function user()
     {
-        return $this->belongsTo(TaiKhoan::class, 'id_nguoi_dung');
+        // return $this->belongsTo(TaiKhoan::class, 'id_nguoi_dung');
     }
 
     public function player()
