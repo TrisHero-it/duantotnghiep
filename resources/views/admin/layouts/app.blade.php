@@ -97,7 +97,7 @@
                         <ul class="pcoded-submenu">
                             <li class=""><a href="{{route('index')}}" class="">Danh sách tài khoản</a></li>
                             <li class=""><a href="{{route('create')}}" class="">Thêm tài khoản</a></li>
-                            <li class=""><a href="{{route('index' )}}" class="">Sửa tài khoản</a></li>
+                            <li class=""><a href="{{route('edit' )}}" class="">Sửa tài khoản</a></li>
                         </ul>
                     </li>
 
