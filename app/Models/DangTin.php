@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -13,11 +14,20 @@ class DangTin extends Model
         "tai_khoan_id",
         "video",
         "luot_thich",
-        "noi_dung"
+        "noi_dung",
+        "trang_thai"
     ];
 
     public function taiKhoan()
     {
         return $this->belongsTo(TaiKhoan::class);
+    }
+
+    public function getTrangThaiAttribute()
+    {
+        $createdTime = $this->created_at;
+        $currentTime = Carbon::now();
+
+        return ($currentTime->diffInHours($createdTime) >= 24) ? false : true;
     }
 }

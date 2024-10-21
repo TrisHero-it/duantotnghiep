@@ -14,7 +14,7 @@
     <div class="col-sm-12">
         <div class="card">
             <div class="card-header">
-                <h5>Zero Configuration</h5>
+                <h5>Danh sách phương thức thanh toán</h5>
             </div>
             <div class="card-body">
                 <div class="dt-responsive table-responsive">
@@ -34,13 +34,13 @@
                                 <td>{{$loop->iteration}}</td>
                                 <td>{{$phuongthucthanhtoan->ten_phuong_thuc}}</td>
                                 <td>{{$phuongthucthanhtoan->so_tai_khoan}}</td>
-                                <td>Null</td>
+                                <td>{{$phuongthucthanhtoan->trang_thai}}</td>
                                 <td>
                                     <a href="#!"><i class="icon feather icon-edit f-16 text-c-green"></i></a>
                                     <form action="{{route('phuongthucthanhtoans.destroy', $phuongthucthanhtoan->id)}}" method="POST" onsubmit="return confirm('Bạn có muốn xoá không?')">
                                         @csrf
                                         @method("DELETE")
-                                        <a href=""><i class="feather icon-trash-2 f-16 ms-3 text-c-red"></i></a>
+                                        <button type="submit" style="border:none; background:none"><i class="feather icon-trash-2 f-16 ms-3 text-c-red"></i></button>
                                     </form>
                                 </td>
                             </tr>
@@ -57,6 +57,8 @@
 @endsection
 
 @section('script')
+
 <script src="{{asset('assets/plugins/data-tables/js/datatables.min.js')}}"></script>
 <script src="{{asset('assets/js/pages/data-basic-custom.js')}}"></script>
+
 @endsection
