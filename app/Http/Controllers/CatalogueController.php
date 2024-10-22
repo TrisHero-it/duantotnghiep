@@ -9,9 +9,11 @@ use App\Http\Requests\Catalogues\{
     CatalogueUpdateRequest
 };
 use App\Models\Danhmuc;
+use Illuminate\Support\Facades\Storage;
 
 class CatalogueController extends Controller
 {
+    const PATH_UPLOAD = "public/image";
     /**
      * Display a listing of the resource.
      */
@@ -26,8 +28,7 @@ class CatalogueController extends Controller
      */
     public function create()
     {
-        $title = "Thêm danh mục";
-        return view('admin.catalogues.create', compact('title'));
+        return view('admin.catalogues.create');
     }
 
     /**
@@ -35,19 +36,16 @@ class CatalogueController extends Controller
      */
     public function store(CatalogueStoreRequest $request)
     {
-        $crentials = $request->validated();
-        if ($request->hasFile('image')) {
-            $crentials['image'] = saveImages($request, 'image', 'catalogues', 300, 300);
+        $validate = $request->validated();
+
+        $data = $request->except('image');
+
+        if($request->hasFile('image')){
+            $data['image'] = Storage::put(self::PATH_UPLOAD,$request->file('image'));
         }
+        Danhmuc::create($data);
 
-        if (empty($crentials['published'])) {
-            $crentials['published'] = 0;
-        }
-
-        Danhmuc::create($crentials);
-
-        session()->flash('success', 'Thêm danh mục thành công');
-        return redirect()->route('admin.catalogues.index');
+        return redirect()->route('catalogues.index');
     }
 
     /**
@@ -90,15 +88,10 @@ class CatalogueController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Danhmuc $catalogue)
+    public function destroy(Danhmuc $id)
     {
-        if ($catalogue->image) {
-            deleteImage($catalogue->image);
-        }
-
-        $catalogue->delete();
-
-        session()->flash('success', 'Xóa danh mục thành công');
-        return redirect()->route('admin.catalogues.index');
+        $danhmuc = Danhmuc::findOrFail($id);
+        $danhmuc->delete();
+        return redirect()->route('catalogues.index');
     }
 }

@@ -22,23 +22,8 @@ class CatalogueStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string|max:255|unique:danh_mucs,name',
+            'ten_danh_muc' => 'required|string|max:255',
             'image' => 'nullable|mimes:png,jpg,jpeg|max:2048',
-            'published' => 'nullable'
-        ];
-    }
-
-    public function messages(): array
-    {
-        return __('request.messages');
-    }
-
-    public function attributes(): array
-    {
-        return [
-            'name' => 'Tên danh mục',
-            'image' => 'Ảnh',
-            'published' => 'Trạng thái'
         ];
     }
 }
