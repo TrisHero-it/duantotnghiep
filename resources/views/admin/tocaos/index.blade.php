@@ -43,21 +43,20 @@
                                             <div class="form-group">
                                                 <select name="trang_thai" class="form-control" required>
                                                     <option value="Chờ xử lí"
-                                                        {{ $complaint->status == 'Chờ xử lí' ? 'selected' : '' }}>Chờ xử lí
-                                                    </option>
+                                                        {{ $complaint->trang_thai === 'Chờ xử lí' ? 'selected' : '' }}>Chờ
+                                                        xử lí</option>
                                                     <option value="Đang xử lí"
-                                                        {{ $complaint->status == 'Đang xử lí' ? 'selected' : '' }}>Đang xử
-                                                        lí
-                                                    </option>
+                                                        {{ $complaint->trang_thai === 'Đang xử lí' ? 'selected' : '' }}>Đang
+                                                        xử lí</option>
                                                     <option value="Thành công"
-                                                        {{ $complaint->status == 'Thành công' ? 'selected' : '' }}>Thành
-                                                        công
-                                                    </option>
+                                                        {{ $complaint->trang_thai === 'Thành công' ? 'selected' : '' }}>
+                                                        Thành công</option>
                                                     <option value="Thất bại"
-                                                        {{ $complaint->status == 'Thất bại' ? 'selected' : '' }}>Thất bại
-                                                    </option>
+                                                        {{ $complaint->trang_thai === 'Thất bại' ? 'selected' : '' }}>Thất
+                                                        bại</option>
                                                 </select>
                                             </div>
+
                                             <button type="submit" class="btn btn-primary">Sửa Trạng Thái</button>
                                         </form>
                                     </td>

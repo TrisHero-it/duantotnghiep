@@ -84,7 +84,7 @@
                     <li data-username="dashboard default ecommerce sales Helpdesk ticket CRM analytics project"
                         class="nav-item pcoded-hasmenu">
                         <a href="/admin/tocaos" class="nav-link"><span class="pcoded-micon"><i
-                                    class="feather icon-home"></i></span><span class="pcoded-mtext">Tố Cáo Người
+                                    class="feather icon-aperture"></i></span><span class="pcoded-mtext">Tố Cáo Người
                                 Chơi</span></a>
                         <ul class="pcoded-submenu">
                             <li class=""><a href="/admin/tocaos" class="">Danh Sách</a></li>
