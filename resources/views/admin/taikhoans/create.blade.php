@@ -56,7 +56,7 @@
             </select>
         </div>
 
-        <button type="submit" class="btn btn-success">Thêm tài khoản</button>
+        <button type="submit" class="btn btn-success">Thêm</button>
     </form>
 </div>
 @endsection
