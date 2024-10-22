@@ -32,8 +32,12 @@
                                 </td>
                                 <td>{{$catalogue->trang_thai}}</td>
                                 <td>
-                                    <a href="#!"><i class="icon feather icon-edit f-16 text-c-green"></i></a>
-                                    <a href="#!"><i class="feather icon-trash-2 f-16 ms-3 text-c-red"></i></a>
+                                    <form action="{{route('catalogues.destroy', $catalogue->id)}}" method="POST" onsubmit="return confirm('Bạn có muốn xoá không?')">
+                                        @csrf
+                                        @method("DELETE")
+                                        <button type="submit" class="btn btn-outline-danger"><i
+                                                class="feather icon-slash"></i>Delete</button>
+                                    </form>
                                 </td>
                             </tr>
                             @endforeach
