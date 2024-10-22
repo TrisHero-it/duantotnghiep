@@ -89,7 +89,6 @@
                             class="nav-link"><span class="pcoded-micon">
                                 <i class="feather icon-menu"></i></span><span class="pcoded-mtext">Catalogues</span></a>
                     </li>
-                   
                 </ul>
             </div>
 
