@@ -24,6 +24,7 @@
                                 <th>Nội dung tố cáo</th>
                                 <th>Trang thái</th>
                                 <th>Xét duyệt</th>
+                                <th>Chức năng</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -60,6 +61,16 @@
                                             <button type="submit" class="btn btn-primary">Sửa Trạng Thái</button>
                                         </form>
                                     </td>
+                                    <td>
+
+                                        <form action="{{ route('admin.tocaos.destroy', $complaint->id) }}" method="POST"
+                                            onsubmit="return confirm('Are you sure you want to delete this complaint?');">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                        </form>
+
+                                    </td>
                                 </tr>
                             @endforeach
 
@@ -72,6 +83,7 @@
                                 <th>Nội dung tố cáo</th>
                                 <th>Trang thái</th>
                                 <th>Xét duyệt</th>
+                                <th>Chức năng</th>
                             </tr>
                         </tfoot>
                     </table>

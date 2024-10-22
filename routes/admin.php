@@ -18,7 +18,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
         Route::resource('catalogues', CatalogueController::class);
         Route::get('/tocaos', [ToCaoController::class, 'index'])->name('tocao.index');
-
+        Route::delete('/tocaos/{complaint}', [ToCaoController::class, 'destroy'])->name('tocaos.destroy');
         Route::patch('/tocaos/{complaint}', [ToCaoController::class, 'updateStatus'])->name('tocao.updateStatus');
         Route::get('/tocaos/add', [ToCaoController::class, 'create'])->name('tocao.add');
         Route::post('/tocaos/add', [ToCaoController::class, 'store'])->name('tocao.store');
