@@ -16,27 +16,21 @@
                         <thead>
                             <tr>
                                 <th>STT</th>
-                                <th>Tài khoản</th>
-                                <th>Video</th>
-                                <th>Lượt thích</th>
-                                <th>Nội dung</th>
-                                <th>Ngày đăng</th>
+                                <th>Tên danh mục</th>
+                                <th>Ảnh đại diện</th>
+                                <th>Trạng thái</th>
                                 <th>Thao tác</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($dangtins as $dangtin)
+                            @foreach ($catalogues as $catalogue)
                             <tr>
-                                <td>Quinn Flynn</td>
-                                <td>{{$dangtin->tai_khoan_id}}</td>
+                                <td>{{$loop->iteration}}</td>
+                                <td>{{$catalogue->ten_danh_muc}}</td>
                                 <td>
-                                    <video width="200px" controls>
-                                        <source src="{{ Storage::url($dangtin->video) }}" type="video/mp4">
-                                    </video>
+                                    <img src="{{Storage::url($catalogue->image)}}" alt="">
                                 </td>
-                                <td>{{$dangtin->luot_thich}}</td>
-                                <td>{{$dangtin->noi_dung}}</td>
-                                <td>{{$dangtin->created_at}}</td>
+                                <td>{{$catalogue->trang_thai}}</td>
                                 <td>
                                     <a href="#!"><i class="icon feather icon-edit f-16 text-c-green"></i></a>
                                     <a href="#!"><i class="feather icon-trash-2 f-16 ms-3 text-c-red"></i></a>
