@@ -61,7 +61,7 @@
                                             <button type="submit" class="btn btn-primary">Sửa Trạng Thái</button>
                                         </form>
                                     </td>
-                                    <td>
+                                    {{-- <td>
 
                                         <form action="{{ route('admin.tocaos.destroy', $complaint->id) }}" method="POST"
                                             onsubmit="return confirm('Are you sure you want to delete this complaint?');">
@@ -70,7 +70,7 @@
                                             <button type="submit" class="btn btn-danger">Delete</button>
                                         </form>
 
-                                    </td>
+                                    </td> --}}
                                 </tr>
                             @endforeach
 
