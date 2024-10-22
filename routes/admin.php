@@ -27,8 +27,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
     // })->where('any', '.*'); // Để xử lý tất cả các route bên dưới
 
     Route::controller(CommentController::class)->group(function () {
-        Route::get('comments', 'index')->name('comment.index');
-        Route::post('comment/updateStatus',  'updateStatus')->name('comment.updateStatus');
+        Route::get('comments', 'index')->name('comments.index');
+        Route::post('comment/updateStatus',  'updateStatus')->name('comments.updateStatus');
 
         Route::resource('catalogues', CatalogueController::class);
         Route::get('/tocaos', [ToCaoController::class, 'index'])->name('tocao.index');
