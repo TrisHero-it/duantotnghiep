@@ -3,14 +3,14 @@
 
 @section('content')
 <div class="container">
-    <h1>Danh Sách Tài </h1>
+    <h1>Danh Sách Tài Khoản</h1>
 
     @if(session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
         </div>
     @endif
-    <a href="{{ route('create') }}" class="btn btn-primary">Thêm Tài Khoản</a>
+    <a href="{{ route('create') }}" class="btn btn-primary">Thêm</a>
     <table class="table table-bordered">
         <thead>
             <tr>
