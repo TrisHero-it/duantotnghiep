@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <h1>Thêm tài khoản</h1>
-    <form action="{{ route('store') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('admin.taikhoans.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label for="name">Tên</label>
@@ -34,7 +34,7 @@
         </div>
         <div class="form-group">
             <label for="cccd">Căn cước công dân</label>
-            <input type="file" name="cccd" class="form-control" style="width: 100px;" required>
+            <input type="number" name="cccd" class="form-control" style="width: 100px;" required>
             <img id="cccd-preview" src="#" alt="CCCD Preview" style="display:none; margin-top:10px; width:100px; height:auto;">
         </div>
         <div class="form-group">
@@ -61,4 +61,3 @@
     </form>
 </div>
 @endsection
-

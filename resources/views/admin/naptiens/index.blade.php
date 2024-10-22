@@ -53,7 +53,7 @@
                             <div class="mb-3">
                                 <label class="form-label" for="exampleFormControlTextarea1">Example textarea</label>
                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                            </div>12312312
+                            </div>
                         </form>
                     </div>
                 </div>
