@@ -66,4 +66,10 @@ class TaiKhoanController extends Controller
         $taikhoans->update($anh_dai_dien);
         return redirect()->route('index');
       }
+
+
+      public function show($id){
+        $taikhoan = TaiKhoan::find($id); 
+        return view('admin.taikhoans.show', compact('taikhoan')); 
+    }
 }
