@@ -7,8 +7,7 @@ use App\Http\Controllers\DangTinController;
 use App\Http\Controllers\TaiKhoanController;
 use App\Http\Controllers\CatalogueController;
 use App\Http\Controllers\ToCaoController;
-use App\Http\Controllers\AdminLoginController;
-use Illuminate\Support\Facades\Session;
+
 
 Route::prefix('admin')->name('admin.')->group(function () {
 
