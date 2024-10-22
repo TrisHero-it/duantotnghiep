@@ -32,7 +32,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
 // Route::get('/', function () {
 //     return view('admin.taikhoans.index');
 // });
-Route::get('/taikhoans', [TaiKhoanController::class, 'index'])->name('index');
 Route::get('/taikhoans/create', [TaiKhoanController::class, 'create'])->name('create');
 Route::post('/taikhoans/store', [TaiKhoanController::class, 'store'])->name('store');
 Route::get('/taikhoans/edit/{id}', [TaiKhoanController::class, 'edit'])->name('edit');
