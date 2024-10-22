@@ -10,7 +10,7 @@
             {{ session('success') }}
         </div>
     @endif
-
+    <a href="{{ route('create') }}" class="btn btn-primary">Thêm Tài Khoản</a>
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -59,6 +59,6 @@
         </tbody>
     </table>
 
-    <a href="{{ route('create') }}" class="btn btn-primary">Thêm Tài Khoản</a>
+  
 </div>
 @endsection
