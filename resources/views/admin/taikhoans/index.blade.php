@@ -3,7 +3,7 @@
 
 @section('content')
 <div class="container">
-    <h1>Danh Sách Tài Khoản</h1>
+    <h1>Danh Sách Tài </h1>
 
     @if(session('success'))
         <div class="alert alert-success">
@@ -61,3 +61,4 @@
 
   
 </div>
+@endsection
