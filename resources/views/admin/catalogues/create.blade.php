@@ -8,39 +8,27 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                <h5>Form controls</h5>
+                <h5>Thêm danh mục</h5>
             </div>
             <div class="card-body">
-                <form action="{{route('catalogues.store')}}" method="post" enctype="multipart/form-data">
-                    @csrf
+                <div class="col12">
                     <div class="row">
-                        <div class="col-md-12">
-                            <div class="mb-3">
-                                <label class="form-label"
-                                    for="exampleFormControlTextarea1">Nội dung</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1"
-                                    rows="3" name="noi_dung"></textarea>
+                        <form action="{{route('catalogues.store')}}" method="post">
+                            @csrf
+                            <div class="col-6">
+                                <label class="form-label" for="exampleInputEmail1">Tên danh mục</label>
+                                <input type="text" name="ten_danh_muc" class="form-control" placeholder="Ten danh muc">
                             </div>
-                        </div>
-                        <div class="col-sm-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h5>Video Upload</h5>
-                                </div>
-                                <div class="card-body">
-                                    <div>
-                                        <input type="file" name="video" accept="video/*">
-                                    </div>
-                                </div>
+                            <div class="col-6">
+                                <label class="form-label">Ảnh đại diện</label>
+                                <input type="file" name="image" class="form-control">
                             </div>
-                        </div>
-                        <button type="submit" class="col-1 btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary mt-4">Submit</button>
+                        </form>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>
-
-    <!-- [ form-element ] end -->
 </div>
 @endsection
