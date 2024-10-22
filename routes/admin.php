@@ -10,32 +10,19 @@ use App\Http\Controllers\ToCaoController;
 use App\Http\Controllers\AdminLoginController;
 use Illuminate\Support\Facades\Session;
 
-Route::get('/admin/login', [AdminLoginController::class, 'showLoginForm'])->name('admin.login');
-
-
-Route::post('/admin/login', [AdminLoginController::class, 'login'])->name('admin.login.post');
-
-
-Route::post('/admin/logout', [AdminLoginController::class, 'logout'])->name('admin.logout');
-
 Route::prefix('admin')->name('admin.')->group(function () {
 
-    Route::get('/{any?}', function () {
-        if (!Session::has('admin_id')) {
-            return redirect()->route('admin.login');
-        }
-    })->where('any', '.*');
 
     Route::controller(CommentController::class)->group(function () {
         Route::get('comments', 'index')->name('comment.index');
         Route::post('comment/updateStatus',  'updateStatus')->name('comment.updateStatus');
 
         Route::resource('catalogues', CatalogueController::class);
-        Route::get('/tocaos', [ToCaoController::class, 'index'])->name('admin.tocao.index');
+        Route::get('/tocaos', [ToCaoController::class, 'index'])->name('tocao.index');
 
-        Route::patch('/tocaos/{complaint}', [ToCaoController::class, 'updateStatus'])->name('admin.tocao.updateStatus');
-        Route::get('/tocaos/add', [ToCaoController::class, 'create'])->name('admin.tocao.add');
-        Route::post('/tocaos/add', [ToCaoController::class, 'store'])->name('admin.tocao.store');
+        Route::patch('/tocaos/{complaint}', [ToCaoController::class, 'updateStatus'])->name('tocao.updateStatus');
+        Route::get('/tocaos/add', [ToCaoController::class, 'create'])->name('tocao.add');
+        Route::post('/tocaos/add', [ToCaoController::class, 'store'])->name('tocao.store');
 
         Route::get('/taikhoans', [TaiKhoanController::class, 'index'])->name('index');
         Route::get('/taikhoans/create', [TaiKhoanController::class, 'create'])->name('create');

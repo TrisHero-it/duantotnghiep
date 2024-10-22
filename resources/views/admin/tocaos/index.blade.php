@@ -4,8 +4,9 @@
 @section('content')
     <div class="col-sm-12">
         <div class="card">
-            <div class="card-header">
-                <h5>Tổ cáo người chơi</h5>
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Tố cáo người chơi</h5>
+                <a href="/admin/tocaos/add" class="btn btn-primary">Thêm tố cáo</a>
             </div>
             @if (session('success'))
                 <div class="alert alert-success">
@@ -34,7 +35,8 @@
                                     <td>{{ $complaint->noi_dung_to_cao }}</td>
                                     <td>{{ ucfirst($complaint->trang_thai) }}</td>
                                     <td>
-                                        <form action="{{ route('admin.tocao.updateStatus', $complaint->id) }}" method="POST">
+                                        <form action="{{ route('admin.tocao.updateStatus', $complaint->id) }}"
+                                            method="POST">
                                             @csrf
                                             @method('PATCH')
 
@@ -56,7 +58,7 @@
                                                     </option>
                                                 </select>
                                             </div>
-                                            <button type="submit" class="btn btn-primary">Update Status</button>
+                                            <button type="submit" class="btn btn-primary">Sửa Trạng Thái</button>
                                         </form>
                                     </td>
                                 </tr>
