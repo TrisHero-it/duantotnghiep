@@ -8,15 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Danhmuc extends Model
 {
     use HasFactory;
-
-    protected $table = 'danh_mucs';
     protected $fillable = [
-        'name',
+        'ten_danh_muc',
         'image',
-        'published',
+        'trang_thai',
     ];
 
-    protected $casts = [
-        'published' => 'boolean',
-    ];
 }

@@ -17,10 +17,8 @@ class CatalogueController extends Controller
      */
     public function index()
     {
-        $title = "Danh sách danh mục";
-
-        $catalogues = Danhmuc::query()->latest()->paginate(10);
-        return view('admin.catalogues.index', compact('title', 'catalogues'));
+        $catalogues = Danhmuc::all();
+        return view('admin.catalogues.index', compact( 'catalogues'));
     }
 
     /**
