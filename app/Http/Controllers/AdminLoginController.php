@@ -28,7 +28,7 @@ class AdminLoginController extends Controller
         if ($taikhoan && Hash::check($request->mat_khau, $taikhoan->mat_khau)) {
             // Lưu thông tin người dùng vào session
             Session::put('admin_id', $taikhoan->id);
-            return redirect()->route('admin.tocaos'); // Chuyển hướng đến trang admin/tocaos
+            return redirect()->route('admin.tocao.index');
         }
 
         return back()->withErrors([
