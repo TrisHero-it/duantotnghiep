@@ -1,56 +1,104 @@
 @extends('admin.layouts.app')
 
-
 @section('content')
-<div class="container">
-    <h1>Chi tiết tài Khoản</h1>
 
-    @if(session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
+<div class="row">
+    <div class="col-sm-12">
+        <a href="{{ route('admin.taikhoans.index') }}" class="btn btn-secondary mb-3">Quay lại danh sách</a>
+
+        <div class="card">
+            <div class="card-header">
+                <h5>Chi tiết tài khoản: {{ $taikhoan->ten }}</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="id">ID:</label>
+                            <input type="text" class="form-control" value="{{ $taikhoan->id }}" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="ten">Tên:</label>
+                            <input type="text" class="form-control" value="{{ $taikhoan->ten }}" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="ngay_sinh">Ngày sinh:</label>
+                            <input type="text" class="form-control" value="{{ \Carbon\Carbon::parse($taikhoan->ngay_sinh)->format('d/m/Y') }}" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="biet_danh">Biệt danh:</label>
+                            <input type="text" class="form-control" value="{{ $taikhoan->biet_danh }}" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="gioi_tinh">Giới tính:</label>
+                            <input type="text" class="form-control" value="{{ $taikhoan->gioi_tinh }}" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" value="{{ $taikhoan->email }}" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="sdt">Số điện thoại:</label>
+                            <input type="text" class="form-control" value="{{ $taikhoan->sdt }}" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="cccd">CCCD:</label>
+                            <input type="text" class="form-control" value="{{ $taikhoan->cccd }}" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="mat_khau">Mật khẩu:</label>
+                            <div class="input-group">
+                                <input type="password" id="mat_khau" class="form-control" value="{{ $taikhoan->mat_khau }}" readonly>
+                                <div class="input-group-append">
+                                    <span class="input-group-text">
+                                        <i class="fa fa-eye" id="togglePassword" style="cursor: pointer;" onclick="togglePassword()" ></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="so_du">Số dư:</label>
+                            <input type="text" class="form-control" value="{{ number_format($taikhoan->so_du, 0, ',', '.') }} VND" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="bi_cam">Bị cấm:</label>
+                            <input type="text" class="form-control" value="{{ $taikhoan->bi_cam ? 'Có' : 'Không' }}" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="created_at">Ngày tạo:</label>
+                            <input type="text" class="form-control" value="{{ $taikhoan->created_at->format('Y-m-d') }}" readonly>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="anh_dai_dien">Ảnh đại diện:</label>
+                            <div>
+                                <img src="{{ Storage::url($taikhoan->anh_dai_dien) }}" alt="Ảnh đại diện" style="width: 200px; border-radius: 10px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="{{ route('admin.taikhoans.edit', $taikhoan->id) }}" class="btn btn-warning">Chỉnh sửa</a>
+                <a href="{{ route('admin.taikhoans.index') }}" class="btn btn-secondary">Quay lại danh sách</a>
+            </div>
         </div>
-    @endif
-   
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Tên</th>
-                <th>Ngày sinh</th>
-                <th>Biệt danh</th>
-                <th>Giới tính</th>
-                <th>Email</th>
-                <th>Số điện thoại</th>
-                <th>CCCD</th>
-                <th>Mật khẩu</th>
-                <th>Số dư</th>
-                <th>Ảnh đại diện</th>
-                <th>Bị cấm</th>
-   
-            </tr>
-        </thead>
-        <tbody>
-
-            <tr>
-                <td>{{ $taikhoan->id }}</td>
-                <td>{{ $taikhoan->ten }}</td>
-                <td>{{ $taikhoan->ngay_sinh }}</td>
-                <td>{{ $taikhoan->biet_danh }}</td>
-                <td>{{ $taikhoan->gioi_tinh }}</td>
-                <td>{{ $taikhoan->email }}</td>
-                <td>{{ $taikhoan->sdt }}</td>
-                <td>{{ $taikhoan->cccd }}</td>
-                <td>{{ $taikhoan->mat_khau }}</td>
-                <td>{{ $taikhoan->so_du }}</td>
-                <td><img src="{{Storage::url($taikhoan->anh_dai_dien)}}" style="width: 100px;" alt=""></td>
-                <td>{{ $taikhoan->bi_cam ? 'Có' : 'Không' }}</td>
-                
- 
-            </tr>
-      
-        </tbody>
-    </table>
-
-  
+    </div>
 </div>
+
+<script>
+    function togglePassword() {
+        var passwordField = document.getElementById("mat_khau");
+        var toggleIcon = document.getElementById("togglePassword");
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+            toggleIcon.classList.remove("fa-eye");
+            toggleIcon.classList.add("fa-eye-slash");
+        } else {
+            passwordField.type = "password";
+            toggleIcon.classList.remove("fa-eye-slash");
+            toggleIcon.classList.add("fa-eye");
+        }
+    }
+</script>
+
 @endsection
