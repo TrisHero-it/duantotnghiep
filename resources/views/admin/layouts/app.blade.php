@@ -99,6 +99,15 @@
                             <li class=""><a href="{{route('admin.players.index')}}" class="">Danh sách player</a></li>
                         </ul>
                     </li>
+                    <li data-username="vertical horizontal box layout RTL fixed static collapse menu color icon dark background image"
+                        class="nav-item pcoded-hasmenu">
+                        <a href="" class="nav-link"><span class="pcoded-micon"><i
+                                    class="fas fa-user-secret"></i></span><span class="pcoded-mtext">Quản lí tài khoản</span></a>
+                        <ul class="pcoded-submenu">
+                            <li class=""><a href="{{route('admin.taikhoans.index')}}" class="">Danh sách tài khoản</a></li>
+                        </ul>
+                    </li>
+                    
                 </ul>
 
 
