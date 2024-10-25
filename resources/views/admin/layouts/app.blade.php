@@ -6,7 +6,7 @@
 
 <head>
 
-    <title>Dasho - Bootstrap 5 Admin Template</title>
+    <title>@yield('title', env('APP_NAME'))</title>
     <!-- HTML5 Shim and Respond.js IE11 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 11]>
@@ -22,8 +22,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="description"
-        content="Dasho Bootstrap admin template made using Bootstrap 5 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
-    <meta name="keywords"
         content="admin templates, bootstrap admin templates, bootstrap 5, dashboard, dashboard templets, sass admin templets, html admin templates, responsive, bootstrap admin templates free download,premium bootstrap admin templates, Dasho, Dasho bootstrap admin template">
     <meta name="author" content="Phoenixcoded" />
 
@@ -40,8 +38,9 @@
     <!-- vendor css -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
-    @stack('styles')
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+    @stack('styles')
     @yield('header')
     
     <!-- vendor css -->
@@ -70,7 +69,7 @@
             <div class="navbar-content scroll-div" id="layout-sidenav">
                 <ul class="nav pcoded-inner-navbar sidenav-inner">
                     <li class="nav-item pcoded-menu-caption">
-                        <label>Navigation</label>
+                        <label>Menu quản lí</label>
                     </li>
                     <li data-username="dashboard default ecommerce sales Helpdesk ticket CRM analytics project"
                         class="nav-item pcoded-hasmenu">
@@ -95,12 +94,37 @@
                                     class="fas fa-user-secret"></i></span><span class="pcoded-mtext">Quản lí player</span></a>
                         <ul class="pcoded-submenu">
                             <li class=""><a href="{{route('players.index')}}" class="">Danh sách player</a></li>
+                    <li data-username="dashboard default ecommerce sales Helpdesk ticket CRM analytics project"
+                        class="nav-item pcoded-hasmenu">
+                        <a href="/admin/tocaos" class="nav-link"><span class="pcoded-micon"><i
+                                    class="feather icon-aperture"></i></span><span class="pcoded-mtext">Tố Cáo Người
+                                Chơi</span></a>
+                        <ul class="pcoded-submenu">
+                            <li class=""><a href="/admin/tocaos" class="">Danh Sách</a></li>
+                        </ul>
+                    </li>
+                    <li data-username="comments" class="nav-item"><a href="{{ route('admin.comment.index') }}"
+                            class="nav-link"><span class="pcoded-micon"><i
+                                    class="feather icon-aperture"></i></span><span
+                                class="pcoded-mtext">Comments</span></a></li>
+                    <li data-username="comments" class="nav-item"><a href="{{ route('admin.catalogues.index') }}"
+                            class="nav-link"><span class="pcoded-micon">
+                                <i class="feather icon-menu"></i></span><span class="pcoded-mtext">Catalogues</span></a>
+                    </li>
+                    <li data-username="dangtins" class="nav-item"><a href="{{ route('dangtins.index') }}"
+                            class="nav-link"><span class="pcoded-micon">
+                                <i class="feather icon-video"></i></span><span class="pcoded-mtext">Đăng tin</span></a>
+                    </li>
+                    <li data-username="dashboard default ecommerce sales Helpdesk ticket CRM analytics project"
+                        class="nav-item pcoded-hasmenu">
+                        <a href="#!" class="nav-link"><span class="pcoded-micon"><i
+                                    class="feather icon-credit-card"></i></span><span class="pcoded-mtext">Phương thức thanh toán</span></a>
+                        <ul class="pcoded-submenu">
+                            <li class=""><a href="{{ route('phuongthucthanhtoans.index') }}" class="">Danh sách</a></li>
+                            <li class=""><a href="{{ route('phuongthucthanhtoans.create') }}" class="">Thêm mới</a></li>
                         </ul>
                     </li>
                 </ul>
-
-
-
             </div>
 
         </div>
@@ -685,12 +709,21 @@
     <script src="{{ asset('assets/js/pcoded.min.js') }}"></script>
     <script src="{{ asset('assets/js/menu-setting.js') }}"></script>
 
+    @yield('script')
     <!-- dashboard-custom js -->
     <script src="{{ asset('assets/js/pages/dashboard-analytics.js') }}"></script>
     <script>
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        $(document).ready(function() {
+            window.previewImage = function(event, imgId) {
+                const file = event.target.files[0];
+                const reader = new FileReader();
+                reader.onload = function() {
+                    const imgElement = document.getElementById(imgId);
+                    imgElement.src = reader.result; // Cập nhật nguồn cho ảnh
+                }
+                if (file) {
+                    reader.readAsDataURL(file);
+                }
             }
         })
     </script>
@@ -711,8 +744,6 @@
             </ul>
         </div>
     </div>
-
-
 </body>
 
 
