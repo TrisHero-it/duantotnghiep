@@ -14,7 +14,7 @@
     <div class="col-sm-12">
         <div class="card">
             <div class="card-header">
-                <h5>Zero Configuration</h5>
+                <h5>Danh sách video tin</h5>
             </div>
             <div class="card-body">
                 <div class="dt-responsive table-responsive">
@@ -26,6 +26,7 @@
                                 <th>Video</th>
                                 <th>Lượt thích</th>
                                 <th>Nội dung</th>
+                                <th>Trạng thái</th>
                                 <th>Ngày đăng</th>
                                 <th>Thao tác</th>
                             </tr>
@@ -33,8 +34,8 @@
                         <tbody>
                             @foreach ($dangtins as $dangtin)
                             <tr>
-                                <td>Quinn Flynn</td>
-                                <td>{{$dangtin->tai_khoan_id}}</td>
+                                <td>{{$loop->iteration}}</td>
+                                <td>{{$dangtin->taiKhoan->ten}}</td>
                                 <td>
                                     <video width="200px" controls>
                                         <source src="{{ Storage::url($dangtin->video) }}" type="video/mp4">
@@ -42,9 +43,12 @@
                                 </td>
                                 <td>{{$dangtin->luot_thich}}</td>
                                 <td>{{$dangtin->noi_dung}}</td>
+                                <td>
+                                    {!! $dangtin->trang_thai == 1 ? '<label class="badge badge-light-success">Success</label>' : '<label class="badge badge-light-danger">Cancel</label>' !!}
+                                </td>
                                 <td>{{$dangtin->created_at}}</td>
                                 <td>
-                                    <form action="{{route('dangtins.destroy', $dangtin->id)}}" method="POST" onsubmit="return confirm('Bạn có muốn xoá không?')">
+                                    <form action="" method="POST" onsubmit="return confirm('Bạn có muốn xoá không?')">
                                         @csrf
                                         @method("DELETE")
                                         <button type="submit" class="btn btn-outline-danger"><i

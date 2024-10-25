@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\BinhLuan;
+use App\Models\Player;
+use App\Models\TaiKhoan;
 use Illuminate\Http\Request;
 
 class CommentController extends Controller
@@ -13,8 +15,10 @@ class CommentController extends Controller
     public function index()
     {
         $binhluans = BinhLuan::all();
-
-        return view('admin.comments.index', compact('binhluans'));
+        $taikhoans = TaiKhoan::all();
+        $players = Player::all();
+        
+        return view('admin.comments.index', compact('binhluans', "taikhoans", 'players'));
     }
     function updateStatus(Request $request)
     {

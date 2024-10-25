@@ -80,13 +80,35 @@
                                         class="pcoded-badge label label-danger">NEW</span></a></li>
                         </ul>
                     </li>
-                    <li data-username="comments" class="nav-item"><a href="{{ route('admin.comment.index') }}"
+                    <li data-username="dashboard default ecommerce sales Helpdesk ticket CRM analytics project"
+                        class="nav-item pcoded-hasmenu">
+                        <a href="/admin/tocaos" class="nav-link"><span class="pcoded-micon"><i
+                                    class="feather icon-aperture"></i></span><span class="pcoded-mtext">Tố Cáo Người
+                                Chơi</span></a>
+                        <ul class="pcoded-submenu">
+                            <li class=""><a href="/admin/tocaos" class="">Danh Sách</a></li>
+                        </ul>
+                    </li>
+                    <li data-username="comments" class="nav-item"><a href="{{ route('comments.index') }}"
                             class="nav-link"><span class="pcoded-micon"><i
                                     class="feather icon-aperture"></i></span><span
                                 class="pcoded-mtext">Comments</span></a></li>
-                    <li data-username="comments" class="nav-item"><a href="{{ route('admin.catalogues.index') }}"
+                    <li data-username="comments" class="nav-item"><a href="{{ route('catalogues.index') }}"
                             class="nav-link"><span class="pcoded-micon">
                                 <i class="feather icon-menu"></i></span><span class="pcoded-mtext">Catalogues</span></a>
+                    </li>
+                    <li data-username="dangtins" class="nav-item"><a href="{{ route('dangtins.index') }}"
+                            class="nav-link"><span class="pcoded-micon">
+                                <i class="feather icon-video"></i></span><span class="pcoded-mtext">Đăng tin</span></a>
+                    </li>
+                    <li data-username="dashboard default ecommerce sales Helpdesk ticket CRM analytics project"
+                        class="nav-item pcoded-hasmenu">
+                        <a href="#!" class="nav-link"><span class="pcoded-micon"><i
+                                    class="feather icon-credit-card"></i></span><span class="pcoded-mtext">Phương thức thanh toán</span></a>
+                        <ul class="pcoded-submenu">
+                            <li class=""><a href="{{ route('phuongthucthanhtoans.index') }}" class="">Danh sách</a></li>
+                            <li class=""><a href="{{ route('phuongthucthanhtoans.create') }}" class="">Thêm mới</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -132,15 +154,20 @@
     </script>
 
     @include('admin.include.alert')
+<<<<<<< HEAD
         
+=======
+
+    @stack('scripts')
+>>>>>>> c9916aa00c040513557725c8bc9fd1ce3680728e
     <div class="footer-fab">
         <div class="b-bg">
             <i class="fas fa-question"></i>
         </div>
         <div class="fab-hover">
             <ul class="list-unstyled">
-                <li><a href="https://html.phoenixcoded.net/dasho/bootstrap/doc/index-bc-package.html"
-                        target="_blank" data-text="UI Kit" class="btn btn-icon btn-rounded btn-info m-0"><i
+                <li><a href="https://html.phoenixcoded.net/dasho/bootstrap/doc/index-bc-package.html" target="_blank"
+                        data-text="UI Kit" class="btn btn-icon btn-rounded btn-info m-0"><i
                             class="feather icon-layers"></i></a></li>
                 <li><a href="https://html.phoenixcoded.net/dasho/bootstrap/doc/index.html" target="_blank"
                         data-text="Document" class="btn btn-icon btn-rounded btn-primary m-0"><i

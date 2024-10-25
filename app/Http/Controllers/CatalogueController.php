@@ -9,6 +9,8 @@ use App\Http\Requests\Catalogues\{
     CatalogueUpdateRequest
 };
 use App\Models\Danhmuc;
+use App\Models\Player;
+use App\Models\TaiKhoan;
 use Illuminate\Support\Facades\Storage;
 
 class CatalogueController extends Controller
