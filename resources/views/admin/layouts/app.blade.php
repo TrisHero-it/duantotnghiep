@@ -98,6 +98,19 @@
                             class="nav-link"><span class="pcoded-micon">
                                 <i class="feather icon-menu"></i></span><span class="pcoded-mtext">Catalogues</span></a>
                     </li>
+                    <li data-username="dangtins" class="nav-item"><a href="{{ route('dangtins.index') }}"
+                            class="nav-link"><span class="pcoded-micon">
+                                <i class="feather icon-video"></i></span><span class="pcoded-mtext">Đăng tin</span></a>
+                    </li>
+                    <li data-username="dashboard default ecommerce sales Helpdesk ticket CRM analytics project"
+                        class="nav-item pcoded-hasmenu">
+                        <a href="#!" class="nav-link"><span class="pcoded-micon"><i
+                                    class="feather icon-credit-card"></i></span><span class="pcoded-mtext">Phương thức thanh toán</span></a>
+                        <ul class="pcoded-submenu">
+                            <li class=""><a href="{{ route('phuongthucthanhtoans.index') }}" class="">Danh sách</a></li>
+                            <li class=""><a href="{{ route('phuongthucthanhtoans.create') }}" class="">Thêm mới</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
 
@@ -122,6 +135,7 @@
     <script src="{{ asset('assets/js/pcoded.min.js') }}"></script>
     <script src="{{ asset('assets/js/menu-setting.js') }}"></script>
 
+    @yield('script')
     <!-- dashboard-custom js -->
     <script src="{{ asset('assets/js/pages/dashboard-analytics.js') }}"></script>
     <script>

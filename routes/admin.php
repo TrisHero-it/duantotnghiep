@@ -1,10 +1,13 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PlayerController;
+use App\Http\Controllers\TaiKhoanController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\DangTinController;
-use App\Http\Controllers\TaiKhoanController;
+use App\Http\Controllers\PhuongThucThanhToanController;
+use App\Http\Controllers\PlayerController;
+use App\Models\PhuongThucThanhToan;
 use App\Http\Controllers\CatalogueController;
 use App\Http\Controllers\ToCaoController;
 
@@ -33,6 +36,12 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/dangtins', [DangTinController::class, 'index'])->name('dangtins.index');
         Route::get('/dangtins/create', [DangTinController::class, 'create'])->name('dangtins.create');
         Route::post('/dangtins', [DangTinController::class, 'store'])->name('dangtins.store');
+
+        Route::get('/phuongthucthanhtoans', [PhuongThucThanhToanController::class, 'index'])->name('phuongthucthanhtoans.index');
+        Route::get('/phuongthucthanhtoans/create', [PhuongThucThanhToanController::class, 'create'])->name('phuongthucthanhtoans.create');
+        Route::post('/phuongthucthanhtoans', [PhuongThucThanhToanController::class, 'store'])->name('phuongthucthanhtoans.store');
+        Route::delete('/phuongthucthanhtoans/{id}/destroy', [PhuongThucThanhToanController::class, 'destroy'])->name('phuongthucthanhtoans.destroy');
+
 
         Route::resource('players', PlayerController::class);
     });
