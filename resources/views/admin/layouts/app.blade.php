@@ -81,6 +81,15 @@
                                         class="pcoded-badge label label-danger">NEW</span></a></li>
                         </ul>
                     </li>
+                    <li data-username="dashboard default ecommerce sales Helpdesk ticket CRM analytics project"
+                        class="nav-item pcoded-hasmenu">
+                        <a href="/admin/tocaos" class="nav-link"><span class="pcoded-micon"><i
+                                    class="feather icon-aperture"></i></span><span class="pcoded-mtext">Tố Cáo Người
+                                Chơi</span></a>
+                        <ul class="pcoded-submenu">
+                            <li class=""><a href="/admin/tocaos" class="">Danh Sách</a></li>
+                        </ul>
+                    </li>
                     <li data-username="comments" class="nav-item"><a href="{{ route('admin.comment.index') }}"
                             class="nav-link"><span class="pcoded-micon"><i
                                     class="feather icon-aperture"></i></span><span
@@ -132,7 +141,7 @@
     </script>
 
     @include('admin.include.alert')
-        
+
     @stack('scripts')
     <div class="footer-fab">
         <div class="b-bg">
@@ -140,8 +149,8 @@
         </div>
         <div class="fab-hover">
             <ul class="list-unstyled">
-                <li><a href="https://html.phoenixcoded.net/dasho/bootstrap/doc/index-bc-package.html"
-                        target="_blank" data-text="UI Kit" class="btn btn-icon btn-rounded btn-info m-0"><i
+                <li><a href="https://html.phoenixcoded.net/dasho/bootstrap/doc/index-bc-package.html" target="_blank"
+                        data-text="UI Kit" class="btn btn-icon btn-rounded btn-info m-0"><i
                             class="feather icon-layers"></i></a></li>
                 <li><a href="https://html.phoenixcoded.net/dasho/bootstrap/doc/index.html" target="_blank"
                         data-text="Document" class="btn btn-icon btn-rounded btn-primary m-0"><i
