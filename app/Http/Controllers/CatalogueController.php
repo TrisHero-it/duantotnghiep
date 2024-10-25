@@ -59,29 +59,26 @@ class CatalogueController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Danhmuc $catalogue)
+    public function edit(Danhmuc $id)
     {
-        $title = "Cập nhật danh mục";
-        return view('admin.catalogues.edit', compact('catalogue', 'title'));
+        $danhmuc = Danhmuc::findOrFail($id);
+
+        return view('admin.catalogues.edit', compact('danhmuc'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(CatalogueUpdateRequest $request, Danhmuc $catalogue)
+    public function update(CatalogueUpdateRequest $request, Danhmuc $id)
     {
-        $crentials = $request->validated();
-        if ($request->hasFile('image')) {
-            $catalogue->image ?: deleteImage($catalogue->image);
-            $crentials['image'] = saveImages($request, 'image', 'catalogues', 300, 300);
-        }
+        $danhmuc = Danhmuc::findOrFail($id);
+        $data = $request->except('image');
 
-        if (empty($crentials['published'])) {
-            $crentials['published'] = 0;
+        if($request->hasFile('image')){
+            Storage::disk('public')->delete($request->image);
+            $data['image'] = Storage::put(self::PATH_UPLOAD,$request->file('image'));
         }
-        $catalogue->update($crentials);
-
-        session()->flash('success', 'Cập nhật danh mục thành công');
+        $danhmuc->update($data);
         return redirect()->route('admin.catalogues.index');
     }
 

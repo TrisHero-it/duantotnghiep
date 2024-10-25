@@ -12,9 +12,9 @@ class CommentController extends Controller
      */
     public function index()
     {
-        
+        $binhluans = BinhLuan::all();
 
-        return view('admin.comments.index');
+        return view('admin.comments.index', compact('binhluans'));
     }
     function updateStatus(Request $request)
     {

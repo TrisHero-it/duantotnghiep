@@ -6,7 +6,6 @@
 
 <head>
 
-    <title>@yield('title', env('APP_NAME'))</title>
     <!-- HTML5 Shim and Respond.js IE11 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 11]>
@@ -38,7 +37,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    @stack('styles')
+    @yield('header')
 
 </head>
 
@@ -113,6 +112,7 @@
     <script src="{{ asset('assets/js/pcoded.min.js') }}"></script>
     <script src="{{ asset('assets/js/menu-setting.js') }}"></script>
 
+    @yield('script')
     <!-- dashboard-custom js -->
     <script src="{{ asset('assets/js/pages/dashboard-analytics.js') }}"></script>
     <script>
@@ -133,7 +133,6 @@
 
     @include('admin.include.alert')
         
-    @stack('scripts')
     <div class="footer-fab">
         <div class="b-bg">
             <i class="fas fa-question"></i>
