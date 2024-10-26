@@ -6,7 +6,6 @@
 
 <head>
 
-    <title>@yield('title', env('APP_NAME'))</title>
     <!-- HTML5 Shim and Respond.js IE11 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 11]>
@@ -103,13 +102,18 @@
                             <li class=""><a href="/admin/tocaos" class="">Danh Sách</a></li>
                         </ul>
                     </li>
-                    <li data-username="comments" class="nav-item"><a href="{{ route('admin.comment.index') }}"
+                    <li data-username="comments" class="nav-item"><a href="{{ route('comments.index') }}"
                             class="nav-link"><span class="pcoded-micon"><i
                                     class="feather icon-aperture"></i></span><span
                                 class="pcoded-mtext">Comments</span></a></li>
-                    <li data-username="comments" class="nav-item"><a href="{{ route('admin.catalogues.index') }}"
-                            class="nav-link"><span class="pcoded-micon">
-                                <i class="feather icon-menu"></i></span><span class="pcoded-mtext">Catalogues</span></a>
+                    <li data-username="dashboard default ecommerce sales Helpdesk ticket CRM analytics project"
+                        class="nav-item pcoded-hasmenu">
+                        <a href="#!" class="nav-link"><span class="pcoded-micon"><i
+                                    class="feather icon-credit-card"></i></span><span class="pcoded-mtext">Danh mục</span></a>
+                        <ul class="pcoded-submenu">
+                            <li class=""><a href="{{ route('catalogues.index') }}" class="">Danh sách</a></li>
+                            <li class=""><a href="{{ route('catalogues.create') }}" class="">Thêm mới</a></li>
+                        </ul>
                     </li>
                     <li data-username="dangtins" class="nav-item"><a href="{{ route('dangtins.index') }}"
                             class="nav-link"><span class="pcoded-micon">

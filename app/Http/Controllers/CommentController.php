@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\BinhLuan;
+use App\Models\Player;
+use App\Models\TaiKhoan;
 use Illuminate\Http\Request;
 
 class CommentController extends Controller
@@ -12,40 +14,11 @@ class CommentController extends Controller
      */
     public function index()
     {
-
-        if (request()->ajax()) {
-            return datatables()->of(BinhLuan::with('user')->get())
-                ->addColumn('trang_thai', function ($row) {
-                    return '
-                    <div class="radio-container">
-                        <label class="toggle">
-                            <input type="checkbox" class="status-change update-status" data-id="' . $row->id . '" ' . ($row->trang_thai ? 'checked' : '') . '>
-                            <span class="slider"></span>
-                        </label>
-                    </div>
-                ';
-                })
-                ->addColumn('email', function ($row) {
-                    return $row->user->email;
-                })
-                ->addColumn('created_at', function ($row) {
-                    return \Carbon\Carbon::parse($row->created_at)->locale('vi')->diffForHumans();
-                })
-                ->addColumn('action', function ($row) {
-                    return '
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-info btn-sm" >
-                               Xem chi tiết
-                            </button>
-                        </div>
-                    ';
-                })
-                ->rawColumns(['trang_thai', 'action'])
-                ->addIndexColumn()
-                ->make(true);
-        }
-
-        return view('admin.comments.index');
+        $binhluans = BinhLuan::all();
+        $taikhoans = TaiKhoan::all();
+        $players = Player::all();
+        
+        return view('admin.comments.index', compact('binhluans', "taikhoans", 'players'));
     }
     function updateStatus(Request $request)
     {

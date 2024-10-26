@@ -5,18 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Catalogue extends Model
+class DanhMuc extends Model
 {
     use HasFactory;
 
-    protected $table = 'danh_mucs';
     protected $fillable = [
-        'name',
+        'ten_danh_muc',
         'image',
-        'published',
+        'trang_thai',
     ];
 
-    protected $casts = [
-        'published' => 'boolean',
-    ];
+    protected $table = 'danh_mucs';
 }
