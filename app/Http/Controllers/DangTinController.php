@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreDangTinRequest;
 use App\Models\DangTin;
+use App\Models\TaiKhoan;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -14,8 +16,25 @@ class DangTinController extends Controller
     public function index()
     {
         $dangtins = DangTin::all();
+        $taikhoans = TaiKhoan::all();
 
-        return view('admin.dangtins.index', compact('dangtins')); 
+        return view('admin.dangtins.index', compact('dangtins', 'taikhoans')); 
+    }
+
+    public function updateDangtinStatus($id)
+    {
+        $dangtin = DangTin::find($id);
+
+        $createdTime = $dangtin->created_at;
+        $currentTime = Carbon::now();
+
+        if ($currentTime->diffInHours($createdTime) >= 24) {
+            $dangtin->trang_thai = false;
+        } else {
+            $dangtin->trang_thai = true;
+        }
+
+        $dangtin->save();
     }
 
     public function create()

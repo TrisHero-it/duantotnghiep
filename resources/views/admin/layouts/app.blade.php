@@ -6,7 +6,6 @@
 
 <head>
 
-    <title>@yield('title', env('APP_NAME'))</title>
     <!-- HTML5 Shim and Respond.js IE11 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 11]>
@@ -38,7 +37,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    @stack('styles')
+    @yield('header')
 
 </head>
 
@@ -90,13 +89,31 @@
                             <li class=""><a href="/admin/tocaos" class="">Danh Sách</a></li>
                         </ul>
                     </li>
-                    <li data-username="comments" class="nav-item"><a href="{{ route('admin.comment.index') }}"
+                    <li data-username="comments" class="nav-item"><a href="{{ route('comments.index') }}"
                             class="nav-link"><span class="pcoded-micon"><i
                                     class="feather icon-aperture"></i></span><span
                                 class="pcoded-mtext">Comments</span></a></li>
-                    <li data-username="comments" class="nav-item"><a href="{{ route('admin.catalogues.index') }}"
+                    <li data-username="dashboard default ecommerce sales Helpdesk ticket CRM analytics project"
+                        class="nav-item pcoded-hasmenu">
+                        <a href="#!" class="nav-link"><span class="pcoded-micon"><i
+                                    class="feather icon-credit-card"></i></span><span class="pcoded-mtext">Danh mục</span></a>
+                        <ul class="pcoded-submenu">
+                            <li class=""><a href="{{ route('catalogues.index') }}" class="">Danh sách</a></li>
+                            <li class=""><a href="{{ route('catalogues.create') }}" class="">Thêm mới</a></li>
+                        </ul>
+                    </li>
+                    <li data-username="dangtins" class="nav-item"><a href="{{ route('dangtins.index') }}"
                             class="nav-link"><span class="pcoded-micon">
-                                <i class="feather icon-menu"></i></span><span class="pcoded-mtext">Catalogues</span></a>
+                                <i class="feather icon-video"></i></span><span class="pcoded-mtext">Đăng tin</span></a>
+                    </li>
+                    <li data-username="dashboard default ecommerce sales Helpdesk ticket CRM analytics project"
+                        class="nav-item pcoded-hasmenu">
+                        <a href="#!" class="nav-link"><span class="pcoded-micon"><i
+                                    class="feather icon-credit-card"></i></span><span class="pcoded-mtext">Phương thức thanh toán</span></a>
+                        <ul class="pcoded-submenu">
+                            <li class=""><a href="{{ route('phuongthucthanhtoans.index') }}" class="">Danh sách</a></li>
+                            <li class=""><a href="{{ route('phuongthucthanhtoans.create') }}" class="">Thêm mới</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -122,6 +139,7 @@
     <script src="{{ asset('assets/js/pcoded.min.js') }}"></script>
     <script src="{{ asset('assets/js/menu-setting.js') }}"></script>
 
+    @yield('script')
     <!-- dashboard-custom js -->
     <script src="{{ asset('assets/js/pages/dashboard-analytics.js') }}"></script>
     <script>
@@ -141,23 +159,22 @@
     </script>
 
     @include('admin.include.alert')
-
-    @stack('scripts')
-    <div class="footer-fab">
-        <div class="b-bg">
-            <i class="fas fa-question"></i>
+    <<<<<<< HEAD=======@stack('scripts')>>>>>>> c9916aa00c040513557725c8bc9fd1ce3680728e
+        <div class="footer-fab">
+            <div class="b-bg">
+                <i class="fas fa-question"></i>
+            </div>
+            <div class="fab-hover">
+                <ul class="list-unstyled">
+                    <li><a href="https://html.phoenixcoded.net/dasho/bootstrap/doc/index-bc-package.html" target="_blank"
+                            data-text="UI Kit" class="btn btn-icon btn-rounded btn-info m-0"><i
+                                class="feather icon-layers"></i></a></li>
+                    <li><a href="https://html.phoenixcoded.net/dasho/bootstrap/doc/index.html" target="_blank"
+                            data-text="Document" class="btn btn-icon btn-rounded btn-primary m-0"><i
+                                class="feather icon feather icon-book"></i></a></li>
+                </ul>
+            </div>
         </div>
-        <div class="fab-hover">
-            <ul class="list-unstyled">
-                <li><a href="https://html.phoenixcoded.net/dasho/bootstrap/doc/index-bc-package.html" target="_blank"
-                        data-text="UI Kit" class="btn btn-icon btn-rounded btn-info m-0"><i
-                            class="feather icon-layers"></i></a></li>
-                <li><a href="https://html.phoenixcoded.net/dasho/bootstrap/doc/index.html" target="_blank"
-                        data-text="Document" class="btn btn-icon btn-rounded btn-primary m-0"><i
-                            class="feather icon feather icon-book"></i></a></li>
-            </ul>
-        </div>
-    </div>
 </body>
 
 
