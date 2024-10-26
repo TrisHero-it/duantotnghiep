@@ -26,7 +26,7 @@
                                 <td>{{$loop->iteration}}</td>
                                 <td>{{$catalogue->ten_danh_muc}}</td>
                                 <td>
-                                    <img src="{{Storage::url($catalogue->image)}}" alt="">
+                                    <img src="{{Storage::url($catalogue->image)}}" alt="" width="100px">
                                 </td>
                                 <td>{{$catalogue->trang_thai}}</td>
                                 <td>

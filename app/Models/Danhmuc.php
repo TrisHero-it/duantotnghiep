@@ -14,4 +14,6 @@ class Danhmuc extends Model
         'trang_thai',
     ];
 
+    protected $table = 'danh_mucs';
+
 }

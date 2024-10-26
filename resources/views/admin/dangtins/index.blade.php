@@ -48,7 +48,7 @@
                                 </td>
                                 <td>{{$dangtin->created_at}}</td>
                                 <td>
-                                    <form action="" method="POST" onsubmit="return confirm('Bạn có muốn xoá không?')">
+                                    <form action="{{route('dangtins.destroy', $dangtin->id)}}" method="POST" onsubmit="return confirm('Bạn có muốn xoá không?')">
                                         @csrf
                                         @method("DELETE")
                                         <button type="submit" class="btn btn-outline-danger"><i

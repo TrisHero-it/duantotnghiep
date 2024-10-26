@@ -41,6 +41,7 @@ Route::delete('/taikhoans/{id}', [TaiKhoanController::class, 'destroy'])->name('
 Route::get('/dangtins', [DangTinController::class, 'index'])->name('dangtins.index');
 Route::get('/dangtins/create', [DangTinController::class, 'create'])->name('dangtins.create');
 Route::post('/dangtins', [DangTinController::class, 'store'])->name('dangtins.store');
+Route::delete('/dangtins/{id}', [DangTinController::class, 'store'])->name('dangtins.destroy');
 
 Route::get('/phuongthucthanhtoans', [PhuongThucThanhToanController::class, 'index'])->name('phuongthucthanhtoans.index');
 Route::get('/phuongthucthanhtoans/create', [PhuongThucThanhToanController::class, 'create'])->name('phuongthucthanhtoans.create');

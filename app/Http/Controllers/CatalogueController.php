@@ -36,15 +36,17 @@ class CatalogueController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(CatalogueStoreRequest $request)
+    public function store(Request $request)
     {
-        $validate = $request->validated();
+        // $validate = $request->validated();
 
         $data = $request->except('image');
 
         if($request->hasFile('image')){
             $data['image'] = Storage::put(self::PATH_UPLOAD,$request->file('image'));
         }
+
+        // dd($request->all());
         Danhmuc::create($data);
 
         return redirect()->route('catalogues.index');
@@ -71,7 +73,7 @@ class CatalogueController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(CatalogueUpdateRequest $request, Danhmuc $id)
+    public function update(Request $request, Danhmuc $id)
     {
         $danhmuc = Danhmuc::findOrFail($id);
         $data = $request->except('image');
