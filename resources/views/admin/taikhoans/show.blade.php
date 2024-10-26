@@ -61,7 +61,7 @@
                             <input type="text" class="form-control" value="{{ number_format($taikhoan->so_du, 0, ',', '.') }} VND" readonly>
                         </div>
                         <div class="form-group">
-                            <label for="bi_cam">Bị cấm:</label>
+                            <label for="phan_quyen_id">Vai trò</label>
                             <input type="text" class="form-control" value="{{ $taikhoan->bi_cam ? 'Có' : 'Không' }}" readonly>
                         </div>
                         <div class="form-group">
@@ -78,7 +78,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="{{ route('admin.taikhoans.edit', $taikhoan->id) }}" class="btn btn-warning">Chỉnh sửa</a>
+                
                 <a href="{{ route('admin.taikhoans.index') }}" class="btn btn-secondary">Quay lại danh sách</a>
             </div>
         </div>
