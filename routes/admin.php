@@ -10,12 +10,24 @@ use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\CatalogueController;
 use App\Http\Controllers\ToCaoController;
 
+<<<<<<< HEAD
+
+Route::get('/tocaos', [ToCaoController::class, 'index'])->name('tocao.index');
+Route::delete('/tocaos/{complaint}', [ToCaoController::class, 'destroy'])->name('tocaos.destroy');
+Route::patch('/tocaos/{complaint}', [ToCaoController::class, 'updateStatus'])->name('tocao.updateStatus');
+Route::get('/tocaos/add', [ToCaoController::class, 'create'])->name('tocao.add');
+Route::post('/tocaos/add', [ToCaoController::class, 'store'])->name('tocao.store');
+
+
+Route::prefix('admin')->name('admin.')->group(function () {
+=======
 Route::get('/comments', [CommentController::class, 'index'])->name('comments.index');
 Route::get('/comments/create', [CommentController::class, 'create'])->name('comments.create');
 Route::post('/comments/store', [CommentController::class, 'store'])->name('comments.store');
 Route::get('/comments/{id}/edit', [CommentController::class, 'edit'])->name('comments.edit');
 Route::put('/comments/{id}', [CommentController::class, 'update'])->name('comments.update');
 Route::delete('/comments/{id}', [CommentController::class, 'destroy'])->name('comments.destroy');
+>>>>>>> 10a956a3c2c1d4cc0188e11fa75ff369cd5264b4
 
 
 Route::get('/catalogues', [CatalogueController::class, 'index'])->name('catalogues.index');
@@ -25,11 +37,16 @@ Route::get('/catalogues/{id}/edit', [CatalogueController::class, 'edit'])->name(
 Route::put('/catalogues/{id}', [CatalogueController::class, 'update'])->name('catalogues.update');
 Route::delete('/catalogues/{id}', [CatalogueController::class, 'destroy'])->name('catalogues.destroy');
 
+<<<<<<< HEAD
+        Route::resource('catalogues', CatalogueController::class);
+
+=======
 Route::get('/tocaos', [ToCaoController::class, 'index'])->name('tocao.index');
 Route::delete('/tocaos/{complaint}', [ToCaoController::class, 'destroy'])->name('tocaos.destroy');
 Route::patch('/tocaos/{complaint}', [ToCaoController::class, 'updateStatus'])->name('tocao.updateStatus');
 Route::get('/tocaos/add', [ToCaoController::class, 'create'])->name('tocao.add');
 Route::post('/tocaos/add', [ToCaoController::class, 'store'])->name('tocao.store');
+>>>>>>> 10a956a3c2c1d4cc0188e11fa75ff369cd5264b4
 
 Route::get('/taikhoans', [TaiKhoanController::class, 'index'])->name('index');
 Route::get('/taikhoans/create', [TaiKhoanController::class, 'create'])->name('create');
