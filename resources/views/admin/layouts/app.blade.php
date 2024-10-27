@@ -696,6 +696,7 @@
     <script src="{{ asset('assets/js/pcoded.min.js') }}"></script>
     <script src="{{ asset('assets/js/menu-setting.js') }}"></script>
 
+    @yield('script')
     <!-- dashboard-custom js -->
     <script src="{{ asset('assets/js/pages/dashboard-analytics.js') }}"></script>
     <script>

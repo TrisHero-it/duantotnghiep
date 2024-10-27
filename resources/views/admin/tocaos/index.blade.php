@@ -4,8 +4,9 @@
 @section('content')
     <div class="col-sm-12">
         <div class="card">
-            <div class="card-header">
-                <h5>Tổ cáo người chơi</h5>
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Tố cáo người chơi</h5>
+                <a href="{{ route('tocao.add') }}" class="btn btn-primary">Thêm tố cáo</a>
             </div>
             @if (session('success'))
                 <div class="alert alert-success">
@@ -23,6 +24,7 @@
                                 <th>Nội dung tố cáo</th>
                                 <th>Trang thái</th>
                                 <th>Xét duyệt</th>
+                                <th>Chức năng</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -41,22 +43,30 @@
                                             <div class="form-group">
                                                 <select name="trang_thai" class="form-control" required>
                                                     <option value="Chờ xử lí"
-                                                        {{ $complaint->status == 'Chờ xử lí' ? 'selected' : '' }}>Chờ xử lí
-                                                    </option>
+                                                        {{ $complaint->trang_thai === 'Chờ xử lí' ? 'selected' : '' }}>Chờ
+                                                        xử lí</option>
                                                     <option value="Đang xử lí"
-                                                        {{ $complaint->status == 'Đang xử lí' ? 'selected' : '' }}>Đang xử
-                                                        lí
-                                                    </option>
+                                                        {{ $complaint->trang_thai === 'Đang xử lí' ? 'selected' : '' }}>Đang
+                                                        xử lí</option>
                                                     <option value="Thành công"
-                                                        {{ $complaint->status == 'Thành công' ? 'selected' : '' }}>Thành
-                                                        công
-                                                    </option>
+                                                        {{ $complaint->trang_thai === 'Thành công' ? 'selected' : '' }}>
+                                                        Thành công</option>
                                                     <option value="Thất bại"
-                                                        {{ $complaint->status == 'Thất bại' ? 'selected' : '' }}>Thất bại
-                                                    </option>
+                                                        {{ $complaint->trang_thai === 'Thất bại' ? 'selected' : '' }}>Thất
+                                                        bại</option>
                                                 </select>
                                             </div>
-                                            <button type="submit" class="btn btn-primary">Update Status</button>
+
+                                            <button type="submit" class="btn btn-primary">Sửa Trạng Thái</button>
+                                        </form>
+                                    </td>
+                                    <td>
+
+                                        <form action="{{ route('tocaos.destroy', $complaint->id) }}" method="POST"
+                                            onsubmit="return confirm('Are you sure you want to delete this complaint?');">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger">Xóa</button>
                                         </form>
                                     </td>
                                 </tr>
@@ -71,6 +81,7 @@
                                 <th>Nội dung tố cáo</th>
                                 <th>Trang thái</th>
                                 <th>Xét duyệt</th>
+                                <th>Chức năng</th>
                             </tr>
                         </tfoot>
                     </table>

@@ -38,7 +38,7 @@ class ToCaoController extends Controller
             'trang_thai' => 'Chờ xử lí',
         ]);
 
-        return redirect()->back()->with('success', 'Complaint filed successfully.');
+        return redirect()->route('tocao.index')->with('success', 'Complaint filed successfully.');
     }
 
     public function updateStatus(ToCao $complaint, Request $request)
@@ -66,5 +66,13 @@ class ToCaoController extends Controller
         }
 
         return redirect()->back()->with('success', 'Complaint status updated successfully.');
+    }
+
+
+    public function destroy(ToCao $complaint)
+    {
+        $complaint->delete();
+
+        return redirect()->back()->with('success', 'Complaint deleted successfully.');
     }
 }

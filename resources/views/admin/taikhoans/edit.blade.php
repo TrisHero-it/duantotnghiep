@@ -20,7 +20,8 @@
         </div>
         <div class="form-group">
             <label for="name">Giới tính</label>
-            <select name="gioi_tinh" id="">
+           
+            <select name="gioi_tinh" id="" class="form-control" value="{{$taikhoans->gioi_tinh}}">
                 <option value="Nam">Nam</option>
                 <option value="Nữ">Nữ</option>
             </select>
@@ -49,20 +50,13 @@
         <div class="form-group">
             <label for="email">Ảnh đại diện</label>
             <input type="file" name="anh_dai_dien" class="form-control" value="{{$taikhoans->anh_dai_dien}}" required>
+            <img src="{{Storage::url($taikhoans->anh_dai_dien)}}" alt="" width="100px" height="100px">
         </div>
         <div class="form-group">
             <label for="email">Bị cấm</label>
             <input type="text" name="bi_cam" class="form-control" value="{{$taikhoans->bi_cam}}" required>
         </div>
-        <!-- <div class="form-group">
-            <label for="password">Chức vụ</label>
-            <select name="ten" id="phan_quyen_id">
-                <option value="Admin">Admin</option>
-                <option value="Player">Player</option>
-                <option value="Người dùng">Người dùng</option>
-            </select>
-        </div> -->
-        
+       
         <button type="submit" class="btn btn-success">Sửa tài khoản</button>
     </form>
 </div>
