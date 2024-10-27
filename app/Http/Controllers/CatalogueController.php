@@ -8,18 +8,21 @@ use App\Http\Requests\Catalogues\{
     CatalogueStoreRequest,
     CatalogueUpdateRequest
 };
+use App\Models\Danhmuc;
+use App\Models\Player;
+use App\Models\TaiKhoan;
+use Illuminate\Support\Facades\Storage;
 
 class CatalogueController extends Controller
 {
+    const PATH_UPLOAD = "public/image";
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $title = "Danh sách danh mục";
-
-        $catalogues = Catalogue::query()->latest()->paginate(10);
-        return view('admin.catalogues.index', compact('title', 'catalogues'));
+        $catalogues = Danhmuc::all();
+        return view('admin.catalogues.index', compact( 'catalogues'));
     }
 
     /**
@@ -27,34 +30,32 @@ class CatalogueController extends Controller
      */
     public function create()
     {
-        $title = "Thêm danh mục";
-        return view('admin.catalogues.create', compact('title'));
+        return view('admin.catalogues.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(CatalogueStoreRequest $request)
+    public function store(Request $request)
     {
-        $crentials = $request->validated();
-        if ($request->hasFile('image')) {
-            $crentials['image'] = saveImages($request, 'image', 'catalogues', 300, 300);
+        // $validate = $request->validated();
+
+        $data = $request->except('image');
+
+        if($request->hasFile('image')){
+            $data['image'] = Storage::put(self::PATH_UPLOAD,$request->file('image'));
         }
 
-        if (empty($crentials['published'])) {
-            $crentials['published'] = 0;
-        }
+        // dd($request->all());
+        Danhmuc::create($data);
 
-        Catalogue::create($crentials);
-
-        session()->flash('success', 'Thêm danh mục thành công');
-        return redirect()->route('admin.catalogues.index');
+        return redirect()->route('catalogues.index');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Catalogue $catalogue)
+    public function show(Danhmuc $catalogue)
     {
         dd($catalogue);
     }
@@ -62,44 +63,36 @@ class CatalogueController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Catalogue $catalogue)
+    public function edit(Danhmuc $id)
     {
-        $title = "Cập nhật danh mục";
-        return view('admin.catalogues.edit', compact('catalogue', 'title'));
+        $danhmuc = Danhmuc::findOrFail($id);
+
+        return view('admin.catalogues.edit', compact('danhmuc'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(CatalogueUpdateRequest $request, Catalogue $catalogue)
+    public function update(Request $request, Danhmuc $id)
     {
-        $crentials = $request->validated();
-        if ($request->hasFile('image')) {
-            $catalogue->image ?: deleteImage($catalogue->image);
-            $crentials['image'] = saveImages($request, 'image', 'catalogues', 300, 300);
-        }
+        $danhmuc = Danhmuc::findOrFail($id);
+        $data = $request->except('image');
 
-        if (empty($crentials['published'])) {
-            $crentials['published'] = 0;
+        if($request->hasFile('image')){
+            Storage::disk('public')->delete($request->image);
+            $data['image'] = Storage::put(self::PATH_UPLOAD,$request->file('image'));
         }
-        $catalogue->update($crentials);
-
-        session()->flash('success', 'Cập nhật danh mục thành công');
+        $danhmuc->update($data);
         return redirect()->route('admin.catalogues.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Catalogue $catalogue)
+    public function destroy(Danhmuc $id)
     {
-        if ($catalogue->image) {
-            deleteImage($catalogue->image);
-        }
-
-        $catalogue->delete();
-
-        session()->flash('success', 'Xóa danh mục thành công');
-        return redirect()->route('admin.catalogues.index');
+        $danhmuc = Danhmuc::findOrFail($id);
+        $danhmuc->delete();
+        return redirect()->route('catalogues.index');
     }
 }

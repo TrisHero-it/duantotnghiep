@@ -1,93 +1,55 @@
 @extends('admin.layouts.app')
 
-@section('title', $title)
-
 @section('content')
-    <div class="card">
-        <div class="card-header d-flex justify-content-between">
-            <h5>{{ $title }}</h5>
-            <a href="{{ route('admin.catalogues.create') }}" class="btn btn-sm btn-primary">Thêm mới (+)</a>
-        </div>
-
-        <div class="card-body">
-            <table class="table table striped table-hover display" id="myTable">
-                <thead>
-                    <th>#</th>
-                    <th>Ảnh</th>
-                    <th>Tên danh mục</th>
-                    <th>Trạng thái</th>
-                    <th>Hành động</th>
-
-                </thead>
-                <tbody>
-                    @forelse ($catalogues as $catalogue)
-                        <tr>
-                            <td>{{ $loop->iteration }}</td>
-                            <td><img class="img-fluid" style="width: 100px" src="{{ showImage($catalogue->image) }}"
-                                    alt=""></td>
-                            <td>{{ $catalogue->name }}</td>
-                            <td>
-                                <div class="radio-container">
-                                    <label class="toggle">
-                                        <input type="checkbox" class="status-change update-status"
-                                            @checked($catalogue->published)>
-                                        <span class="slider"></span>
-                                    </label>
-                                </div>
-                            </td>
-
-                            <td>
-                                <form action="{{ route('admin.catalogues.destroy', $catalogue) }}" method="post"
-                                    id="delete-form-{{ $catalogue->id }}" style="display: inline">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="btn btn-sm btn-danger" type="submit"
-                                        onclick="confirmDelete(event, '{{ $catalogue->id }}')">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </form>
-                                <a class="btn btn-sm btn-warning"
-                                    href="{{ route('admin.catalogues.edit', $catalogue) }}"><i
-                                        class="fas fa-edit"></i></a>
-                            </td>
-                        </tr>
-                    @empty
-                        <tr>
-                            <td colspan="5">Không có dữ liệu</td>
-                        </tr>
-                    @endforelse
-                </tbody>
-            </table>
+<div class="row">
+    <!-- Zero config table start -->
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-header">
+                <h5>Zero Configuration</h5>
+            </div>
+            <div class="card-body">
+                <div class="dt-responsive table-responsive">
+                    <table id="simpletable" class="table table-striped table-bordered nowrap">
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Tên danh mục</th>
+                                <th>Ảnh đại diện</th>
+                                <th>Trạng thái</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($catalogues as $catalogue)
+                            <tr>
+                                <td>{{$loop->iteration}}</td>
+                                <td>{{$catalogue->ten_danh_muc}}</td>
+                                <td>
+                                    <img src="{{Storage::url($catalogue->image)}}" alt="" width="100px">
+                                </td>
+                                <td>{{$catalogue->trang_thai}}</td>
+                                <td>
+                                    <form action="{{route('catalogues.destroy', $catalogue->id)}}" method="POST" onsubmit="return confirm('Bạn có muốn xoá không?')">
+                                        @csrf
+                                        @method("DELETE")
+                                        <button type="submit" class="btn btn-outline-danger"><i
+                                                class="feather icon-slash"></i>Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
+    <!-- Language - Comma Decimal Place table end -->
+</div>
 @endsection
 
-@push('styles')
-    <style>
-        .btn>i {
-            margin-right: 0 !important;
-        }
-    </style>
-@endpush
-
-@push('scripts')
-    <script>
-        function confirmDelete(event, catalogueId) {
-            event.preventDefault(); // Ngăn việc submit form ngay lập tức
-
-            Swal.fire({
-                title: 'Are you sure?',
-                text: "You won't be able to revert this!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, delete it!'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    document.getElementById('delete-form-' + catalogueId).submit();
-                }
-            });
-        }
-    </script>
-@endpush
+@section('script')
+<script src="{{asset('assets/plugins/data-tables/js/datatables.min.js')}}"></script>
+<script src="{{asset('assets/js/pages/data-basic-custom.js')}}"></script>
+@endsection

@@ -36,8 +36,4 @@ class BinhLuan extends Model
     {
         return $this->belongsTo(BinhLuan::class, 'binh_luan_id', 'id');
     }
-
-    protected $casts = [
-        'trang_thai' => 'boolean',
-    ];
 }
