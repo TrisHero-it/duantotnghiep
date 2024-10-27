@@ -12,11 +12,6 @@ use App\Http\Controllers\ToCaoController;
 
 
 
-Route::get('/tocaos', [ToCaoController::class, 'index'])->name('tocao.index');
-Route::delete('/tocaos/{complaint}', [ToCaoController::class, 'destroy'])->name('tocaos.destroy');
-Route::patch('/tocaos/{complaint}', [ToCaoController::class, 'updateStatus'])->name('tocao.updateStatus');
-Route::get('/tocaos/add', [ToCaoController::class, 'create'])->name('tocao.add');
-Route::post('/tocaos/add', [ToCaoController::class, 'store'])->name('tocao.store');
 
 
 Route::prefix('admin')->name('admin.')->group(function () {
@@ -67,13 +62,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
                 Route::put('/taikhoans/update/{id}', [TaiKhoanController::class, 'update'])->name('taikhoans.update');
                 Route::delete('/taikhoans/{id}', [TaiKhoanController::class, 'destroy'])->name('taikhoans.delete');
 
-                Route::get('/taikhoans', [TaiKhoanController::class, 'index'])->name('index');
-                Route::get('/taikhoans/show/{id}', [TaiKhoanController::class, 'show'])->name('show');
-                Route::get('/taikhoans/create', [TaiKhoanController::class, 'create'])->name('create');
-                Route::post('/taikhoans/store', [TaiKhoanController::class, 'store'])->name('store');
-                Route::get('/taikhoans/edit/{id}', [TaiKhoanController::class, 'edit'])->name('edit');
-                Route::put('/taikhoans/update/{id}', [TaiKhoanController::class, 'update'])->name('update');
-                Route::delete('/taikhoans/{id}', [TaiKhoanController::class, 'destroy'])->name('delete');
 
 
                 Route::get('/dangtins', [DangTinController::class, 'index'])->name('dangtins.index');
