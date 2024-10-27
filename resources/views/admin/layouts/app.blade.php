@@ -115,6 +115,18 @@
                             <li class=""><a href="{{ route('phuongthucthanhtoans.create') }}" class="">Thêm mới</a></li>
                         </ul>
                     </li>
+
+                    <li data-username="dashboard default ecommerce sales Helpdesk ticket CRM analytics project"
+                        class="nav-item pcoded-hasmenu">
+                        <a href="#!" class="nav-link"><span class="pcoded-micon"><i
+                                    class="feather icon-home"></i></span><span class="pcoded-mtext">Quản lý tài khoản</span></a>
+                        <ul class="pcoded-submenu">
+                            <li class=""><a href="{{route('index')}}" class="">Danh sách tài khoản</a></li>
+                            <li class=""><a href="{{route('create')}}" class="">Thêm tài khoản</a></li>
+                        </ul>
+                    </li>
+
+                    
                 </ul>
             </div>
 

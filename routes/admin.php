@@ -49,6 +49,7 @@ Route::post('/tocaos/add', [ToCaoController::class, 'store'])->name('tocao.store
 >>>>>>> 10a956a3c2c1d4cc0188e11fa75ff369cd5264b4
 
 Route::get('/taikhoans', [TaiKhoanController::class, 'index'])->name('index');
+Route::get('/taikhoans/show/{id}', [TaiKhoanController::class, 'show'])->name('show');
 Route::get('/taikhoans/create', [TaiKhoanController::class, 'create'])->name('create');
 Route::post('/taikhoans/store', [TaiKhoanController::class, 'store'])->name('store');
 Route::get('/taikhoans/edit/{id}', [TaiKhoanController::class, 'edit'])->name('edit');

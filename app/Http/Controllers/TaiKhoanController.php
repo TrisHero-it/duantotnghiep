@@ -42,6 +42,16 @@ class TaiKhoanController extends Controller
             Storage::delete($taikhoan->anh_dai_dien);
         }
 
+<<<<<<< HEAD
+        $taikhoans->update($anh_dai_dien);
+        return redirect()->route('index');
+      }
+
+
+      public function show($id){
+        $taikhoan = TaiKhoan::find($id); 
+        return view('admin.taikhoans.show', compact('taikhoan')); 
+=======
         // Xóa tài khoản
         $taikhoan->delete();
 
@@ -75,5 +85,6 @@ class TaiKhoanController extends Controller
         // Cập nhật thông tin tài khoản
         $taikhoans->update($dataToUpdate);
         return redirect()->route('index')->with('success', 'Cập nhật tài khoản thành công!');
+>>>>>>> 282599ba7b15ef5fb6df3e5c451fd471c4a13c99
     }
 }
